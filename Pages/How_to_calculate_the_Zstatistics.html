@@ -144,7 +144,7 @@ MathJax.Hub.Config({
             $$ n = sample size$$
            </p>      
            <p>It should be noted that the denominator can be replace by Standard Error. since $$S.E=\frac{σ}{\sqrt{n}}$$
-
+             </p>
          </div>
         </div>
 
@@ -158,6 +158,59 @@ MathJax.Hub.Config({
               $$P = SampleProportion$$    
            </p>     
            <p>It should be noted that the denominator can be replace by Standard Error. since $$S.E=\sqrt{\frac{P_0(1-P_0)}{n}}$$</p> 
+         </div>
+        </div>
+      </div>      
+    </div>
+  </div>
+</div>
+
+
+  <div class="container section col-md-11 col-sm-11">
+     <div class="card">
+     <div class="card-header ">
+         <p class="h4">How to Calculate the  Zstatistics of Two  population</p>
+     </div>
+     <div class="card-body">
+      <p>Here we will learn how to calculate Zstatistics when dealing with hust a population. This is of two category </p>
+      <div class="row">
+
+        <div id="accordion" class="container col-md-5">
+         <div class="card-header">
+          <p class="h5"> Formula for calculating Zstatistics when Sample mean, size and standard deviation from two different population is given. </p>
+         </div>
+         <div class="card-body">
+           <p>$$Z_{cal}=\frac{x_1-x_2}{\sqrt{{\frac{σ_1}{n_1}}+{\frac{σ_2}{n_2}}}}$$
+              $ x_1 =$ sample mean of the first population<br>
+              $ x_2 =$ Sample mean of the second population<br>
+              $ \sigma_1 =$ standard deviation of the first population<br>
+              $ \sigma_2 =$ standard deviation of the second population<br>
+              $ n_1 =$ sample size of the first population<br>
+              $ n_2 =$ Sample size of the second population<br> 
+           </p>     
+
+           <p>it is use to test for significant differences of two population mean</p> 
+         </div>
+        </div>
+          
+
+      
+        <div id="accordion" class="container col-md-5">
+         <div class="card-header">
+          <p class="h5"> Formula for calculating Zstatistics of two population given the proportions and sample size</p>
+         </div>
+         <div class="card-body">
+
+           <p>$$P_0=\frac{n_1 P_1 + n_2P_2}{n_1+n_2}$$
+            $$Z_{cal}=\frac{P_1-P_2}{\sqrt{P_0(1-P_0)(\frac{1}{n_1}+\frac{1}{n_2})}}$$
+             
+$P_1$ is the proportion of the first sample <br>
+$P_2$ is the proportion of the second sample<br>
+$n_1$ is the size of the first sample from the first population<br>
+$n_2$ is the size of the second sample from the second population.<br>
+$(P_1-P_2)$ is the difference between the two proportions. 
+</p>
+           <p> this is use to check for the significant differences of proportion between two population</p> 
          </div>
         </div>
       </div>
@@ -249,45 +302,3 @@ Here the hypothesis statement is gotten from the general score belief which is f
 
 
 
-
-
- <!--
-
-3. Formula for calculating Zstatistics when Sample mean, size and standard deviation from two different population is given.  Where x1 is the mean of the first sample 
-x2 is the mean of the second sample =
-n1 is the size of the first sample from the first population¬¬¬
-n2 is the size of the second sample from the second population.
-¬¬¬¬(x1-x2) is the difference between the two proportions. 
-
-4. Formula for calculating Zstatistics when two proportion and sample size from two populations is given.
- 
-Where P is the average calculated proportion
-P1 is the proportion of the first sample 
-P2 is the proportion of the second sample
-N1 is the size of the first sample from the first population
-N2 is the size of the second sample from the second population.
-(p1-P2) is the difference between the two proportions. 
-All of the formula above needed to be master well before attempting any question Now let’s see some examples. 
-
-Example1
-In the population, the average IQ is 100 with a standard deviation of 15. A team of scientists want to test a new medication to see if it has either a positive or negative effect on intelligence, or not effect at all. A sample of 30 participants who have taken the medication has a mean of 150. Did the medication affect intelligence?
-
-Solution 
-H0: (the IQ is not affected by the medication i.e it is still 100 as it is believed)
-Ha:  (the IQ is affected by the medication i.e it is no more 100 as it is before)
-Mathematically
-H0: μ = 100years (this is usually noted from the population)
-Ha: μ ≠ 100years (either there is any effect)
-Step2
-α=0.5 (whenever it is not given we use this
-Since the sample size is up to 30 then we will need to use Z-table also it must be two tails test and rule3 should be apply for decision since the alternative test is with “not equal to” sign.
-Now we need to proceed to step3
-Step3
- μ0 = 100
-σ = 15
-n = 30
-x̄n = 150
-Zcal= (μ0- x̄n)/(σ/√n)
-Zcal= 150-100)/ (15/√30)
-Zcal= 50/2.7386
--->
