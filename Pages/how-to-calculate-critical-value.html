@@ -21,36 +21,8 @@ Author URL: http://youngscienstist.com
   <link href="//fonts.googleapis.com/css?family=Muli:300,300i,400,500,600,700,800,900&display=swap" rel="stylesheet">
   <link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,500,700,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/hypothesis.css">
   <!-- Template CSS -->
-<style type="text/css">
-*{margin:0;
-  padding: 0}
-#factorization{margin: 0vw;
-  padding: 15px;
-background: #aa9999;}
-#subtopic{text-align: center;
-font-size: 33px;
-color: white;}
-td,th{width:17%;
-  border: solid 2px black}
-#tail-table{font-size: 15px}
-
-audio{display: inline;
-      width: 80%;
-      }
-#accordion{border: solid black 1px}
-.linking{color: blue;}
-.section{margin: 9px;
-         border-radius: 5px;
-         text-align: justify;
-         border: none;}
-a{text-decoration: none;}
-button{outline: transparent;
-       border: solid 1px transparent;
-       padding: 8px;
-       color:blue}
-
-</style>
 </head>
 <body>
 <script type="text/javascript"
@@ -132,32 +104,11 @@ the following show the different confidence level and their respective significa
 
   }
 </script>
-<table border="2">
-<thead>
+<table border="2" id="table1">
 
-<tr><th>CL</th><th>$\alpha$</th><th>$\alpha/_2$</th><th>$Z_\alpha$</th><th>$Z_{\alpha/2}$</th>
-
-</tr>
-</thead>
-<tbody>
-
-<tr><td>90%</td><td>10%</td><td>5%</td><td>1.28</td><td>1.64</td>
-</tr>
-
-<tr><td>95%</td><td>5%</td><td>2.5%</td><td>1.64</td><td>1.96</td>
-</tr>
-
-<tr><td>97.5%</td><td>2.5%</td><td>1.75%</td><td>1.96</td><td>2.11</td>
-</tr>
-
-<tr><td>98%</td><td>2%</td><td>1%</td><td>2.05</td><td>2.32</td>
-</tr>
-
-<tr><td>99%</td><td>1%</td><td>0.5%</td><td>2.32</td><td>2.57</td>
-</tr>
-</tbody>
 </table>
 <br>
+
 <button data-bs-toggle="collapse" href="#collapse1"
           class="solution btn-sm">Text Explanation</button>
           <button data-bs-toggle="collapse" class="audio btn-sm" href="#audio1">Voice Explanation</button>
@@ -322,7 +273,7 @@ Don't forget to submit our answer to me on <a href="mailto:abdullahioladejo1@gma
 </section>
 </div>
 
-<section class="w3l-footer-16">
+<section classs="w3l-footer-16">
     <div id="footer">
 
    </div>
@@ -343,8 +294,15 @@ Don't forget to submit our answer to me on <a href="mailto:abdullahioladejo1@gma
 <script type="text/javascript" src="../assets/js/headerElement.js"></script>
 <script type="text/javascript" src="../assets/js/General.js"></script>
 <script type="text/javascript" src="../assets/js/bootstrap5.bundle.min.js"></script>
-
-
+<script type="text/javascript">
+  let table1=[['CL',    'α',  'α/2',   'Zα',   'Zα/2'],
+['90%',  '10%',  '5%',    '1.28', '1.64'],
+['95%',  '5%',   '2.5%',  '1.64', '1.96'],
+['97.5%', '2.5%','1.75%', '1.96', '2.11'],
+['98%',  '2%',   '1%',    '2.05', '2.32'],
+['99%',  '1%',   '0.5%',  '2.32', '2.57']]
+table(table1,'table1')
+</script>
 
 
 
