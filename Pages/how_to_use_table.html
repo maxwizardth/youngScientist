@@ -23,9 +23,9 @@ Author URL: http://youngscienstist.com
   <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
   <!-- Template CSS -->
   <link rel="stylesheet" type="text/css" href="../assets/css/hypothesis.css">
-<style>
-#tabImg{max-width:100%}
-</style>
+  <style type="text/css">
+    .tabImg{max-width: 100%}
+  </style>
 </head>
 <body>
 <script type="text/javascript"
@@ -87,7 +87,7 @@ The Pdf you downloaded has two different normal distribution table in which one 
 <p>$\alpha /2 = 0.05/2 =0.025$ (since it is two tailed test)</p>
 <p><strong>Step2</strong>
 Now that we already know the important value go in to the table and look for wherever you have (0.025) or any number very closed to that.
-<img src="../assets/images/Ztable1.png" id="tabImg"> <br><br></p>
+<img src="../assets/images/Ztable1.png" class="tabImg"> <br><br></p>
 <p><strong>Step3</strong>: As you can see above we see exactly the number we are looking for. Now match the row and column of the place where the number is located. 
 Here if we go to the leftmost we can see (-1.9) and to the topmost we can see (0.06).</p>
 <p><strong>Step 4:</strong> we merge both numbers together  and neglect the negative i.e 1.9 + 0.06 = 1.96</p>
@@ -102,7 +102,7 @@ Here if we go to the leftmost we can see (-1.9) and to the topmost we can see (0
   <div class="container section col-md-11 col-sm-11">
     <div class="card">
      <div class="card-header ">
-         <p class="h4">Example1</p>
+         <p class="h4">Example2</p>
      </div>
      <div >
       <div class="card-body">
@@ -129,7 +129,7 @@ Here if we go to the leftmost we can see (-1.9) and to the topmost we can see (0
 Here $\alpha=5% =0.05$ (no need to divide b 2 since it is one tailed test)</p>
 <p><strong>Step2</strong>:
 Now that we already know the important value, go to the table and look for wherever you have (0.05) or any number very closed to that.
-<img src="../assets/images/Ztable2.png" id="tabImg"><br><br></p> <p><strong>Step3:</strong> here we do not see the exact value (0.05), hence we will pick first number closest to it. Here we can pick either (0.0505) or (0.0495) but I prefer the first one.
+<img src="../assets/images/Ztable2.png" class="tabImg"><br><br></p> <p><strong>Step3:</strong> here we do not see the exact value (0.05), hence we will pick first number closest to it. Here we can pick either (0.0505) or (0.0495) but I prefer the first one.
 Now match the row and column of the place where the number is located. If we go to the leftmost we can see (-1.6) and to the topmost we can see (0.04). </p>
 <p><strong>Step 4</strong>: we merge both numbers together and neglect the negative i.e 1.6+ 0.04 = 1.64</p>
 <p>Hence the critical value is 1.64. </p>
@@ -144,7 +144,7 @@ Now match the row and column of the place where the number is located. If we go 
   <div class="container section col-md-11 col-sm-11">
     <div class="card">
      <div class="card-header ">
-         <p class="h4">Example2</p>
+         <p class="h4">Example 3</p>
      </div>
      <div >
       <div class="card-body">
@@ -172,7 +172,7 @@ Now match the row and column of the place where the number is located. If we go 
 <p>Here alpha=0.02 (no need to divide b 2 since it is one tailed test)</p>
 <p><strong>Step2:</strong> </p>
 <p>Now that we already know the important value, go to the table and look for wherever you have (0.02) or any number very closed to that.
-<img src="../assets/images/Ztable3.png" id="tabImg"> 
+<img src="../assets/images/Ztable3.png" class="tabImg"> 
 
 <br></p>
 <p><strong>Step3:</strong></p>
@@ -193,7 +193,7 @@ Hence the critical value is -2.05.  (Whenever you are given left tail our answer
   <div class="container section col-md-11 col-sm-11">
     <div class="card">
      <div class="card-header ">
-         <p class="h4">Example3</p>
+         <p class="h4">Example 4</p>
      </div>
      <div >
       <div class="card-body">
@@ -222,7 +222,7 @@ Hence the critical value is -2.05.  (Whenever you are given left tail our answer
 <p>$\alpha =1-CL =1-0.98 =0.02$</p>
 <p>Here alpha=0.02 /2 =0.01 (since the type of tail is not stated we will choose two tails)
 <strong>Step2:</strong> Now that we already know the important value, go to the table and look for wherever you have (0.01) or an number very closed to that.
-<img src="../assets/images/Ztable4.png" id="tabImg"> <br><br></p>
+<img src="../assets/images/Ztable4.png" class="tabImg"> <br><br></p>
 <p><strong>Step3:</strong> As you can see above we don’t see exact number we are looking for.  So we are choosing the leftmost value between the two closed value of our target i.e. (0.0102 and 0.0099), so we choose 0.0102. Now match the row and column of the place where the number is found. 
 Here if we go to the leftmost we can see (-2.3) and to the topmost we can see (0.02).</p>
 <p><strong>Step 4</strong>: we merge both numbers together and neglect the negative i.e 2.3 + 0.02=2.32</p>
@@ -239,7 +239,7 @@ Here if we go to the leftmost we can see (-2.3) and to the topmost we can see (0
   <div class="container section col-md-11 col-sm-11">
     <div class="card">
      <div class="card-header ">
-         <p class="h4">Example4</p>
+         <p class="h4">Example 5</p>
      </div>
      <div >
       <div class="card-body">
@@ -269,7 +269,7 @@ $CL=95% =0.98$</p>
 Now that we need to subtract the value needed to be checked from 1 i.e. 
 1-0.05=0.95<br>
 Now important value will be 0.95, go to the table and look for wherever you have (0.95) or any number very closed to that.
-<img src="../assets/images/Ztable5.png" id="tabImg"> <br><br></p>
+<img src="../assets/images/Ztable5.png" class="tabImg"> <br><br></p>
 
 <p><strong>Step3</strong>: As you can see above we don’t see exact number we are looking for.  So we are choosing the leftmost value between the two closed value of our target i.e. (0.9495 and 0.9505), so we choose 0.9495. Now match the row and column of the place where the number is found. </p>
 <p>Here if we go to the leftmost we can see (1.6) and to the topmost we can see (0.04). 
@@ -286,7 +286,7 @@ Hence the critical value is 1.64.</p>
   <div class="container section col-md-11 col-sm-11">
     <div class="card">
      <div class="card-header ">
-         <p class="h4">Example5</p>
+         <p class="h4">Example 6</p>
      </div>
      <div id="collapse5" >
       <div class="card-body">
@@ -317,7 +317,7 @@ Hence the critical value is 1.64.</p>
 <p>Now we need to subtract the value needed to be checked from 1 i.e. 
 1-0.025=0.975</p>
 <p>Now important value will be 0.975, go to the table and look for wherever you have (0.975) or an number very closed to that. </p>
-<img src="../assets/images/Ztable6.png" id="tabImg"> <p><strong>Step3:</strong></p>
+<img src="../assets/images/Ztable6.png" class="tabImg"> <p><strong>Step3:</strong></p>
 <p>As you can see above we see the exact number we are looking for.  S Now match the row and column of the place where the number is found. 
 Here if we go to the leftmost we can see (1.9) and to the topmost we can see (0.06). </p>
 <p><strong>Step 4:</strong></p>
@@ -336,7 +336,7 @@ Hence the critical value is $\pm1.96$</p><br><br>
   <div class="container section col-md-11 col-sm-11">
     <div class="card">
      <div class="card-header ">
-         <p class="h4">Example6</p>
+         <p class="h4">Example 7</p>
      </div>
      <div>
       <div class="card-body">
@@ -365,7 +365,7 @@ Hence the critical value is $\pm1.96$</p><br><br>
 <p>Now we need to subtract the value needed to be checked from 1 i.e 
 1-0.02=0.98</p>
 <p>Now important value will be 0.98, go to the table and look for wherever you have (0.98) or any number very closed to that.</p>
-<img src="../assets/images/table7.jpg" id="tabImg">
+<img src="../assets/images/table7.jpg" class="tabImg">
  <p><strong>Step3</strong>
 As you can see above we don’t see the exact number we are looking for.  So, we are going to choose (0.9798) Now match the row and column of the place where the number is found. 
 Here if we go to the leftmost we can see (2.0) and to the topmost we can see (0.05). 
@@ -379,7 +379,7 @@ Hence the critical value is 2.05. </p>
   <div class="container section col-md-11 col-sm-11">
     <div class="card">
      <div class="card-header ">
-         <p class="h4">Example7</p>
+         <p class="h4">Example 8</p>
      </div>
      <div >
       <div class="card-body">
@@ -410,7 +410,7 @@ $\alpha=0.02/2 =0.01$(since It is two tails)<br>
 <br>Now we need to subtract the value needed to be checked from 1 i.e 
 1-0.01=0.99<br>
 Now important value will be 0.99, go to the table and look for wherever ou have (0.99) or an number ver closed to that.</p>
-<img src="../assets/images/Ztable8.png" id="tabImg">
+<img src="../assets/images/Ztable8.png" class="tabImg">
 <p><strong>Step3</strong>: As you can see above we don’t see the exact number we are looking for.  So we will choose the best between (0.9798 and 0, 9901) so I select (0.9798) now match the row and column of the place where the number is found. 
 Here if we go to the leftmost we can see (2.3) and to the topmost we can see (0.02). 
 <br>
@@ -434,11 +434,21 @@ You can always check for critical value from any of the table if you observe wel
   <div class="container section col-md-11 col-sm-11">
     <div class="card">
      <div class="card-header ">
-         <p class="h4">Example8</p>
+         <p class="h3">How to check critical value from t-table</p>
      </div>
      <div >
       <div class="card-body">
-        <p>
+<p> firstly, you can't use table without knowing the sample size. why??well the sample size will be used to calculate the degree of freedom denoted (df) in t table. you can download your t-table <a href="https://yuppal.people.ysu.edu/econ_3790/t-table.pdf">here</a>before moving to the example</p>
+<p> How do we make use of the table?</p>
+<p> To use t-table usually refers to as student's distribution table, you need to know the sample size and the level of significant. It is important to be aware of the test you want to use. i.e either one tail or two tails.<br>
+
+sample size is used to get the degree of freedom(df) using the formula:<br>
+df=n-1 <br> let us take a look at some examples.</p>
+
+<h4>Example1</h4>
+<p>
+what is the critical value of data with a sample size of 9 and a level of significance of 1% for 1 tail test?
+
            <br>    
           <button data-bs-toggle="collapse" href="#collapse8"
           class="solution">View Solution</button>
@@ -450,12 +460,18 @@ You can always check for critical value from any of the table if you observe wel
             </audio>
           </div>
         
-        <div id="collapse8" class="collapse card">
+        <div id="collapse8" class=" card">
          <div class="card-header ">
            <p class="h5">Solution</p>
          </div>
          <div class="card-body">
-         <p></p>
+         <p>Solution
+Here $\alpha = 1% =0.01$<br>
+$n=9, df=n-1$<br>m
+$df=9-1=8$<br>
+Now look for the 1% or 0.01 on the top of our table and 8 from the &#39;df&#39; column. match it together as you can see below<br>
+<img src="../assets/images/ttable1.png" class="tabImg"></p>
+<p>As you can see the answer is 2.896, please don’t be deceived b 98% on the top, it is nothing that is written as a decimal is what Is important if ou have this kind of table with ou.</p>
       </div>
     </div>
   </div>
@@ -469,12 +485,12 @@ You can always check for critical value from any of the table if you observe wel
   <div class="container section col-md-11 col-sm-11">
     <div class="card">
      <div class="card-header ">
-         <p class="h4">Example9</p>
+         <p class="h4">Example 2</p>
      </div>
      <div >
       <div class="card-body">
-        <p>
-         
+         <p>Assuming we decide to do two-tail test for example1 above what will be the critical value??<br> 
+
           <br>    
           <button data-bs-toggle="collapse" href="#collapse9"
           class="solution">View Solution</button>
@@ -492,7 +508,14 @@ You can always check for critical value from any of the table if you observe wel
          </div>
          <div class="card-body">
          <p>
-           
+We would follow the same steps here too. 
+$\alpha = 1% $<br>
+$\alpha/2=1/2%=0.5% $<br>
+$\alpha/2 = 0.5/100=0.005 (to Decimal)$<br>
+$n=9, df=n-1$<br>
+$df=9-1=8$<br>
+Now look for the 0.5% or 0.005 on the top of our table and 8 from the &#39;df&#39; column. Match it together as you can see below<img src="../assets/images/ttable2.png" class="tabImg"></p>
+<p>Now it is ver clear that the result from the table is 3.355</p>
          </p>
          </div>
         </div>
@@ -501,62 +524,98 @@ You can always check for critical value from any of the table if you observe wel
     </div>
   </div>
 
-
-<h4>How to check critical value from t-table.</h4>
-<p> firstly, you can't use table without knowing the sample size. why??well the sample size will be used to calculate the degree of freedom denoted b (df) in t table. ou can download your t-table <a href="https://yuppal.people.ysu.edu/econ_3790/t-table.pdf">here</a>before moving to the example</p>
-<h4>Example1</h4>
-<p>
-what is the critical value of data with a sample size of 9 and a level of significance of 1% for 1 tail test?
-Solution
-Here $\alpha = 1% =0.01$<br>
-$n=9, df=n-1$<br>m
-$df=9-1=8$<br>
-Now look for the 1% or 0.01 on the top of our table and 8 from the &#39;df&#39; column. match it together as you can see below<br>
-<img src="../assets/images/ttable1.png" id="tabImg"></p>
-<p>As you can see the answer is 2.896, please don’t be deceived b 98% on the top, it is nothing that is written as a decimal is what Is important if ou have this kind of table with ou.</p>
-<h4 id="example2">Example2</h4>
-<p>Assuming we decide to do two-tail test for example1 above what will be the critical value??<br> 
-<b>Solution</b><br> 
-We would follow the same steps here too. 
-$\alpha = 1% $<br>
-$\alpha/2=1/2%=0.5% $<br>
-$\alpha/2 = 0.5/100=0.005 (to Decimal)$<br>
-$n=9, df=n-1$<br>
-$df=9-1=8$<br>
-Now look for the 0.5% or 0.005 on the top of our table and 8 from the &#39;df&#39; column. Match it together as you can see below<img src="../assets/images/ttable2.png" id="tabImg"></p>
-<p>Now it is ver clear that the result from the table is 3.355</p>
-<h4 id="example3">Example3</h4>
-<p> what will be the critical value of sample of size 18 with confidence level of 95%?? </p>
-<h4 id="solution">Solution</h4>
+<div class="container section col-md-11 col-sm-11">
+    <div class="card">
+     <div class="card-header ">
+         <p class="h4">Example 3</p>
+     </div>
+     <div >
+      <div class="card-body">
+        <p>
+          what will be the critical value of sample of size 18 with confidence level of 95%??
+          <br>    
+          <button data-bs-toggle="collapse" href="#collapse11"
+          class="solution">View Solution</button>
+          <button data-bs-toggle="collapse" class="audio" href="#audio11">Voice Note</button>
+        </p>
+           <div id="audio11" class="collapse">
+            <audio controls>
+              <source src="no9.3gpp" type="audio/mp3">
+            </audio>
+          </div>
+        
+        <div id="collapse11" class="collapse card">
+         <div class="card-header ">
+           <p class="h5">Solution</p>
+         </div>
+         <div class="card-body">
 <p>CL=95% =0.95
  $\alpha =1-CL= 1-0.95=0.05 $<br>
 $\alpha/2==0.05/2% $<br>
 $\alpha/2 = 0.5/100=0.025 (to Decimal)$<br>
 $n=9, df=n-1$<br>
 $df=18-1=17$<br>
-Now look for the 2.5% or 0.025 on the top of our table and 17 from &#39;df&#39; column. Match it together as you can see below<img src="../assets/images/ttable3.png" id="tabImg"></p>
+Now look for the 2.5% or 0.025 on the top of our table and 17 from &#39;df&#39; column. Match it together as you can see below<img src="../assets/images/ttable3.png" class="tabImg"></p>
 <p>Now it is very clear that the result from the table is 2.110</p>
-<p>Example4
+
+         </p>
+         </div>
+        </div>
+      </div>
+     </div>
+    </div>
+  </div>
+<div class="container section col-md-11 col-sm-11">
+    <div class="card">
+     <div class="card-header ">
+         <p class="h4">Example 4</p>
+     </div>
+     <div >
+      <div class="card-body">
+        <p>
+         
  What will be the critical value of sample of size 28 with confidence level of 90% for one tail test?? 
-Solution 
-CL=95% =0.90
+          <br>    
+          <button data-bs-toggle="collapse" href="#collapse9"
+          class="solution">View Solution</button>
+          <button data-bs-toggle="collapse" class="audio" href="#audio9">Voice Note</button>
+        </p>
+           <div id="audio9" class="collapse">
+            <audio controls>
+              <source src="no9.3gpp" type="audio/mp3">
+            </audio>
+          </div>
+        
+        <div id="collapse9" class="collapse card">
+         <div class="card-header ">
+           <p class="h5">Solution</p>
+         </div>
+         <div class="card-body">
+         <p>CL=95% =0.90
  $\alpha =1-CL= 1-0.90=0.1 $<br>
 \alpha= 0.1 (to Decimal)
 $n=28, df =n-1$<br>
 $df=28-1=27$<br>
 Now look for the 10% or 0.1 on the top of our table and 27 from the &#39;df&#39; column. Match it together as you can see below<br>
-<img src="../assets/images/ttable4.png" id="tabImg"></p>
-<p>Now it is very clear that the result from the table is 1.314
 
-
+<img src="../assets/images/ttable4.png" class="tabImg">
+<p>Now it is very clear that the result from the table is 1.314</p>
+         </p>
+         </div>
+        </div>
+      </div>
+     </div>
+<div>
+<p style="padding: 15px;">
 You should be able to check the critical value from the t-table by now. Try to click the next page to see some questions to test our understanding.
-Remember! You are free to chat me up on WhatsApp if you have anything to discuss with </p>
-
+Remember! You are free to chat me up on WhatsApp if you have anything to discuss with <br>
 
 <button id="previous"><a id="previous" href="how-to-use-calculate-critical-value.html">Previous</a></button >
-<button id="Next"><a id="Next" href="how-to-use-calculate-critical-value.html">Next Page<a/></button>
-</section>
-</div>
+<button id="Next"><a id="Next" href="how-to-use-calculate-critical-value.html">Next Page
+</a></button></p>
+</div></div></div>
+</div></div></section>
+
 
 
 <section class="w3l-footer-16">
