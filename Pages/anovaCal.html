@@ -1,0 +1,204 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+     <link rel="stylesheet" href="../assets/css/anovaCal.css">
+    <title>Anova Calculator</title>
+</head>
+
+<body>
+<div class="frame">
+        <h1 class="anova">One Way Anova</h1>
+   <div class="container">
+    <div class="Nav">
+        <div class="dropdown">
+            <button class="dropbtn">Switch way 
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <span class="OneWay">One Way</span>
+                <span class="TwoWay">Two Way</span>
+            </div>
+          </div> 
+           <div class="btn">
+            <button class="button" onclick="addColumn1('dataRows1')"><span>Add Column </span></button>
+            </div>
+            <div class="btn">
+            <button class="button" onclick="addRow1()"><span>Add Row </span></button>
+           </div>
+    </div>
+        <div class="form">
+           <form action="" >
+            <table id="oneWay">
+             <tr class="dataRows1">
+                <th class="head">
+                <p class="heading"><i>Column 1</i></p>
+                  <input type="number" class="input input1">
+                    </th>
+                        <th class="head">
+                            <p class="heading"><i>Column 2</i></p>
+                            <input type="number" class="input input1">
+                        </th>
+                        <th class="head">
+                            <p class="heading"><i>Column 3</i></p>
+                            <input type="number" class="input input1">
+                        </th>      
+                    </tr>
+
+                    <tr class="dataRows1">
+                        <td><input type="number" class="input input1"></td>
+                        <td><input type="number" class="input input1"></td>
+                        <td><input type="number" class="input input1"></td>
+                    </tr>
+
+                    <tr class="dataRows1">
+                        <td><input type="number" class="input input1"></td>
+                        <td><input type="number" class="input input1"></td>
+                        <td><input type="number" class="input input1"></td>
+                    </tr>
+
+                    <tr class="dataRows1">
+                        <td><input type="number" class="input input1"></td>
+                        <td><input type="number" class="input input1"></td>
+                        <td><input type="number" class="input input1"></td>
+                    </tr>
+                 </table>
+
+                 <div class="btm-nav">
+                    <input type="reset" class="reset" value="Clear all">
+                 </div>
+               </form>
+               <button class="button" onclick="compute()">Compute Result</button>
+               </div>
+   </div>
+</div>
+
+
+<!-- TWO WAY ANOVA-->
+<div class="frame2">
+    <h1 class="anova">Two Way Anova</h1>
+    <div class="container">
+     <div class="Nav">
+        <div class="dropdown">
+            <button class="dropbtn">Switch way 
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <span class="OneWay2">One Way</span>
+                <span class="TwoWay2">Two Way</span>
+            </div>
+          </div> 
+            <div class="btn">
+             <button class="button" onclick="addColumn('dataRows2')"><span>Add Column </span></button>
+             </div>
+             <div class="btn">
+             <button class="button" onclick="addRow('twoWay')"><span>Add Row </span></button>
+            </div>
+     </div>
+    
+ 
+ 
+            <div class="form">
+                <form action="" >
+                  <table id="twoWay">
+                     <tr  class="dataRows2">
+                        <td><i class="row">R-1</i></td>
+                         <th class="head">
+                             <p class="heading"><i>Col-1</i></p>
+                             <input type="number" class="input input2">
+                         </th>
+                         <th class="head">
+                             <p class="heading"><i>Col-2</i></p>
+                             <input type="number" class="input input2">
+                         </th>
+ 
+                         <th class="head">
+                             <p class="heading"><i>Col-3</i></p>
+                             <input type="number" class="input input2">
+                         </th>
+                              
+                         <th class="head">
+                            <p class="heading"><i>Col-4</i></p>
+                            <input type="number" class="input input2">
+                        </th>
+                     </tr>
+ 
+                     <tr  class="dataRows2">
+                       <td><i class="row">R-2</i></td>
+                         <td><input type="number" class="input input2"></td>
+                         <td><input type="number" class="input input2"></td>
+                         <td>
+                            <input type="number" class="input input2">
+                        </td>
+                         <th class="head">  
+                            <input type="number" class="input input2">
+                        </th>
+                      
+                       
+
+
+                     </tr>
+ 
+                     <tr class="dataRows2">
+                        <td><i class="row">R-3</i></td>
+                         <td><input type="number" class="input input2"></td>
+                         <td><input type="number" class="input input2"></td>
+                         <td><input type="number" class="input input2"></td>
+                         <th class="head">
+                            
+                            <input type="number" class="input input2">
+                        </th>
+                       
+                     </tr>
+ 
+                     <tr class="dataRows2">
+                        <td><i class="row">R-4</i></td>
+                         <td><input type="number" class="input input2"></td>
+                         <td><input type="number" class="input input2"></td>
+                         <td><input type="number" class="input input2"></td>
+                         <th class="head">
+                            
+                            <input type="number" class="input input2">
+                        </th>
+                        
+                     </tr>
+
+                     <tr class="dataRows2">
+                        <td><i class="row">R-5</i></td>
+                         <td><input type="number" class="input input2"></td>
+                         <td><input type="number" class="input input2"></td>
+                         <td><input type="number" class="input input2"></td>
+                         <th class="head">
+                            <input type="number" class="input input2">
+                        </th>
+                         
+                     </tr>
+ 
+                     
+                  </table>
+ 
+                     <div class="btm-nav">
+                        <input type="reset" class="reset" value="Clear all">
+                        
+                     </div>                
+                </form>
+                <button class="button">Compute Result</button>
+                </div>
+ 
+    </div>
+ </div>
+ <div class="solution">
+    <div id="check"></div>
+    <div id="result"></div>
+    <div id="summary"></div>
+ </div>
+</div>
+<script src="anovaCal.js">
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+ </script>
+ <div></div>
+</body>
+</html>
