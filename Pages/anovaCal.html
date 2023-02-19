@@ -3,8 +3,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
-     <link rel="stylesheet" href="../assets/css/anovaCal.css">
+    <link rel="stylesheet" href="index-1.css">
+    
     <title>Anova Calculator</title>
 </head>
 
@@ -30,12 +30,12 @@
            </div>
     </div>
         <div class="form">
-           <form action="" >
+          <form action="">
             <table id="oneWay">
              <tr class="dataRows1">
                 <th class="head">
                 <p class="heading"><i>Column 1</i></p>
-                  <input type="number" class="input input1">
+                  <input type="number" class="input input1" autofocus>
                     </th>
                         <th class="head">
                             <p class="heading"><i>Column 2</i></p>
@@ -65,12 +65,15 @@
                         <td><input type="number" class="input input1"></td>
                     </tr>
                  </table>
+                </form>
 
                  <div class="btm-nav">
                     <input type="reset" class="reset" value="Clear all">
+                    <button class="button" id="compute" onclick="compute()" >Compute Result</button>
                  </div>
-               </form>
-               <button class="button" onclick="compute()">Compute Result</button>
+              
+              
+            </form>
                </div>
    </div>
 </div>
@@ -178,27 +181,51 @@
  
                      
                   </table>
+                  <input type="reset" class="reset" value="Clear all">
+                </form>
  
                      <div class="btm-nav">
-                        <input type="reset" class="reset" value="Clear all">
-                        
+                        <div>
+                           
+                            <input type="number" class="degree" value="Alpha">
+                        </div>
+                        <button class="button">Compute Result</button>
                      </div>                
-                </form>
-                <button class="button">Compute Result</button>
+              
+               
                 </div>
  
     </div>
  </div>
+
+
  <div class="solution">
-    <div id="check"></div>
-    <div id="result"></div>
-    <div id="summary"></div>
+  <h3 class="SSWHeading"></h3>
+
+    <div id="check" class="animate-bottom"></div>
+
+    
+
+<div id="loader"></div>
+<div style="display:none;" id="myDiv" class="animate-bottom">
+    <div id="summary" class="animate-bottom"> </div>
+         
+    </div>
+    
  </div>
-</div>
-<script src="../assets/js/anovaCal.js">
-    </script>
+
+
+<script type="text/javascript" src="ftable.js"></script>
+<script src="anovaSSW.js"></script>
+<script src="anovaSSB.js" ></script>
+<script src="anovaCal.js"></script>
+
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
- </script>
+    
+<script >
+workingData=[[2,4,2,5],[9,4,5,2],[3,6,2,5]]
+compute()
+</script>
  <div></div>
 </body>
 </html>
