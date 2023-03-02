@@ -57,15 +57,18 @@ function Marge2Array(array1,array2,conj1,conj2){
 
 /*function to calculate the Sum of Square Between the Groups*/
 function SSB(array){
-var check=document.getElementById('check');
 let devSq= SSbtw(MeanArray(array),'check',2,'B').sqDev
 console.log(devSq) 
 let allN=[]
 let ssbSum=devSq.map((sqdev,len)=>{
 allN.push(array[len].length)
 	return devSq[len]*array[len].length})
+var LastSSB=document.getElementsByClassName('eachWork')
+var check=LastSSB[LastSSB.length-1]
 check.innerHTML+='SSB = '+Marge2Array(allN,devSq,'*',"+")+'<br>'
 let ssb=sumArray(ssbSum)
+
+
 check.innerHTML+='SSB = '+ssb
 AnovaTable.SSB=Number(ssb)
 AnovaTable.dfb=MeanArray(array).length-1;
