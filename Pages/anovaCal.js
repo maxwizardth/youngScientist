@@ -43,8 +43,8 @@ function latex(){(function () {
   }
 })();}
 
-/*____________________latex end ________________________*/
 
+/*____________________latex end ________________________*/
 
 function dataSet(id){
     let allTr=document.getElementsByClassName(id)
@@ -55,7 +55,7 @@ function dataSet(id){
     let tr=allTr[i].children
     let colData=Array.from(tr).map(td=>{
     let node=td.firstElementChild.tagName=='P'?1:0
-        return Number(td.children[node].value)})
+        return td.children[node].value})
     data.push(colData)
     i++
     }
@@ -91,7 +91,7 @@ Array.from(allInput).forEach(input=>input.addEventListener('input',dataSet))
 function compute(){
 document.getElementById('check').innerHTML=''
 dataSet('dataRows1')
-workingData=transpose(workingData)
+workingData=removeEmptyFromMatrix(transpose(workingData),'')
 SSWAnova(workingData)
 SSB(workingData)
 Report()

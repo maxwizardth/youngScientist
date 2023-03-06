@@ -24,7 +24,12 @@ function sumArray(array,dp=4){
   }
 
 var transpose=(Matrix)=>Matrix[0].map((col,c)=>Matrix.map(row=>row[c]))
-
+function removeEmpty(arr,value){
+ return arr.filter((el)=>el!=value)
+}
+function removeEmptyFromMatrix(Matrix,value) {
+  return Matrix.map((arr)=>removeEmpty(arr,value))
+}
 function sd(arrayDat,dp=3){
 let arrayData=arrayDat
 let sum=sumArray(arrayData)
@@ -56,8 +61,8 @@ let table=`<table class='std' border=2
 
 let Rough1=`<div>
              <p>$\\sum x_${ij}=${sdDetails.sum}$<br>
-                $N=${sdDetails.n}$<br>
-                $\\bar x_${ij}=\\frac{\\sum x}{N}$<br>
+                $N=${sdDetails.n}$<br><br>
+                $\\bar x_${ij}=\\frac{\\sum x}{N}$<br><br>
                 $\\bar x_${ij}=${sdDetails.sum}/${sdDetails.n}$<br>
                 $\\bar x_${ij}=${sdDetails.mean}$<br><br>
                 $\\sum (x_${ij}-\\bar x_${ij})^2=${sdDetails.sumSqDev}$<br>

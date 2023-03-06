@@ -52,7 +52,7 @@ function SSB2Way(matrix){
   let SST2W=(SSTgrnd/N).toFixed(2)
   let step1=`<p>$ SS Tota(SS_total )=∑∑\\frac{T_{ij}^2}{n_{ij}} -C$<br>
               $∑∑T_{ij}^2=${SSTgrnd}<br>$
-              $n_ij=${N}<br>$
+              $n_{ij}=${N}<br>$
             $SS_{total}=\\frac{${SSTgrnd}}{${N}}$<br>
             $SS_{total}=${SST2W}$<br>`
      AnovaTable['SST']=SST2W
@@ -89,6 +89,7 @@ let table=`<div class='eachWork'>
             ${SSwR(transpose(matrix),'columns')[0]}
             </div>
             <div class='eachWork'>
+            <h3>Square of all the data given and sum</h3>
              <table class='std' border=2 
             style="border-collapse: collapse;
            text-align: center;">
@@ -115,7 +116,8 @@ function SSwR(matrix,category) {
  var rowSquare4=(rowSquare3-C).toFixed(2)
  var rough1=`<p>
              <h3>Sum of Square Between ${category}</h3>
-             $SS Btw ${category} (SS_{${category}} )=∑\\frac{T_i^2}{n_i} -C<br>$
+             $SS Btw ${category} (SS_{${category}} )=∑\\frac{T_i^2}{n_i} -C$<br>
+             where $T_i$ and $n_i$ represent the total and number of data in each ${category} respectively<br>
              $∑\\frac{T_i^2}{n_i} = \\frac{T_1^2}{n_1} +\\frac{T_2^2}{n_2}+\\frac{T_3^2}{n_3} $<br>
              $…….+\\frac{T_{${category}}^2}{n_{${category}}}$<br>
              $∑\\frac{T_i^2}{n_i} =${rowSquare1}$<br>
@@ -138,7 +140,7 @@ function Report2W(matrix){
 const {MSBc,MSBr,MSW,SSBc,SSBr,SST,SSW,dfbc,dfbr,dft,dfw}=SSB2Way(matrix)
 const Frow=(MSBr/MSW).toFixed(2)
 const Fcol=(MSBc/MSW).toFixed(2)
-const alpha=document.getElementById('alpha1').value
+const alpha=document.getElementById('alpha2').value
 const Fcritrow=Number(Fcrit(alpha,dfbr,dfw))
 const Fcritcol=Number(Fcrit(alpha,dfbc,dfw))
 
@@ -149,9 +151,9 @@ since $(${stat})F_{stat}$>F_{crit}(${crit})`:
 `<b>Decision</b>: We do not reject the null hypothesis
 since $(${stat})F_{stat} < F_{crit}(${crit})$`
 const conclusion=crit<stat?`<p><b>Conclusion:</b>at ${alpha} level of significant We have enough evidence to 
-conclude that there all the means are not the same</p>`:
-`<p><b>Conclusion:</b>at ${alpha} level of significant We do not have enough evidence to 
-conclude that there all the means are not the same</p>`
+conclude that there is significant different Between the means or all the means are the same are not the same</p>`:
+`<p><b>Conclusion:</b>at ${alpha} level of significant The data do not have enough evidence to 
+indicate that the given variable are differ</p>`
 var summary=`<p><h3>${part} Variation </h3>
               $\\alpha =${alpha}$<br>
               $F_{${alpha}(${dfb},${dfw})}=${crit}$<br>
@@ -159,8 +161,11 @@ var summary=`<p><h3>${part} Variation </h3>
               ${conclusion}`
 return summary}
 
-const table=`<table style="border-collapse:collapse;
-                           margin:14px;" border=2>
+const table=`
+            <div class='eachWork'>
+            <table style="border-collapse:collapse;
+                        margin-left:-10px;"
+                           border=2>
            <tr>
         <th class="styleTh">Sources Of Variation</th>
         <th class="styleTh">SS</th>
@@ -201,6 +206,7 @@ const table=`<table style="border-collapse:collapse;
   ${decision(Fcritrow,Frow,dfbr,dfw,alpha,'Rows')}
   ${decision(Fcritcol,Fcol,dfbc,dfw,alpha,'Columns')}
   <button class="details" onclick="ShowDetails()">Show full details</button>
+  </div>
   `
 document.getElementById('summary').innerHTML=table
 }
