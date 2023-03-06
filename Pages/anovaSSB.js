@@ -15,8 +15,7 @@ return {sum:sum,n:n,mean:mean,dev:dev,sqDev:sqDev,
 function SSbtw(array,idElement,dp,ij){
     let sdDetails=sdBtw(array)
     let sdTable=sdDetails.sdTable
-
-let table=`<table class='std' border=2 
+    let table=`<table class='std' border=2 
             style="border-collapse: collapse;
            text-align: center;">
             <tr>
@@ -27,19 +26,17 @@ let table=`<table class='std' border=2
              ${tableRow(sdTable)}
              </table>`
 
-let Rough1=`
-             <p>
+let Rough1=` <p>
                 $\\bar x_{btw}=\\frac{\\sum \\bar x_n}{n}$<br><br>
                 $\\bar x_{btw}=\\frac{(\\bar x_1 + \\bar x_2+\\bar x_3...+\\bar x_n )}{n}$<br><br>
                 $\\sum \\bar x_n=${sdDetails.sum}$<br><br>
                 $n=${sdDetails.n}$<br><br>
-                $\\bar x_{btw}=\\frac{${sdDetails.sum}}{${sdDetails.n}}$<br><br>
-                $\\bar x_{btw}=${sdDetails.mean}$<br>
-                $SSB=n_1(\\bar x_1- \\bar x_{btw})^2+
-                    n_2(\\bar x_2- \\bar x _{btw} )^2 + 
-                    n_3(\\bar x_3- \\bar x _{btw} )^2 +
+                $\\bar x_{grand}=\\frac{${sdDetails.sum}}{${sdDetails.n}}$<br><br>
+                $\\bar x_{grand}=${sdDetails.mean}$<br>
+                $SSB=n_1(\\bar x_1- \\bar x_{grand})^2+
+                    n_2(\\bar x_2- \\bar x _{grand} )^2 + 
+                    n_3(\\bar x_3- \\bar x _{grand} )^2 <br>+
                     ....+n_n(\\bar x_n- \\bar x _{btw} )^2$
-
               </p>
              `
 

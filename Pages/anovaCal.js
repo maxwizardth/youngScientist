@@ -46,8 +46,8 @@ function latex(){(function () {
 /*____________________latex end ________________________*/
 
 
-function dataSet(){
-    let allTr=document.getElementsByClassName('dataRows1')
+function dataSet(id){
+    let allTr=document.getElementsByClassName(id)
     let noOfRow=allTr.length
     var data=[]
     var i=0
@@ -64,6 +64,25 @@ function dataSet(){
     console.log(data)
 }
 
+function dataSet2(id){
+    let allTr=document.getElementsByClassName(id)
+    let noOfRow=allTr.length
+    var data=[]
+    var i=0
+    while(noOfRow>i){
+    let tr=allTr[i].children
+    let colData=Array.from(tr).map(td=>{
+    let node=td.firstElementChild.tagName=='P'?1:0
+        return Number(td.children[node].value)})
+    j=colData.slice(1,)
+    data.push(j)
+    i++
+    }
+    workingData=data
+    return data
+    console.log(data)
+}
+
 var workingData=[]
 var data=[[4,5,3,6],[4,7,3,8],[3,8,4,5],[4,5,8,5],[4,6,3,6],[8,7,5,6]]
 let allInput=document.getElementsByClassName('input')
@@ -71,7 +90,7 @@ Array.from(allInput).forEach(input=>input.addEventListener('input',dataSet))
 
 function compute(){
 document.getElementById('check').innerHTML=''
-dataSet()
+dataSet('dataRows1')
 workingData=transpose(workingData)
 SSWAnova(workingData)
 SSB(workingData)
@@ -81,8 +100,16 @@ topFunction()
 document.getElementById("check").style.display = 'none'
 }
 
-
-
+function compute2(){
+document.getElementById('check').innerHTML=''
+dataSet2('dataRows2')
+workingData=workingData
+SSB2Way(workingData)
+Report2W(workingData)
+latex()
+topFunction()
+document.getElementById("check").style.display = 'none'
+}
 
 
 function topFunction() {

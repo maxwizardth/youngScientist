@@ -101,7 +101,6 @@ means.push(mean)})
 return means}
 
 
-
 /*funciton to add column to table*/
 function addColumn(classname){
     allRow=document.getElementsByClassName(classname)
@@ -112,6 +111,20 @@ function addColumn(classname){
                             <input type="number" class="input">
                         </th>`
     for (var i = 1; i <noOfRow; i++) {
+        allRow[i].innerHTML+=` <th class="head">    
+                            <input type="number" class="input" style="width: 100%;">
+                        </th>`}
+}
+
+function RemoveColumn(classname){
+    allRow=document.getElementsByClassName(classname)
+    noOfRow=allRow.length
+    var col=allRow[1].childElementCount
+    allRow[0].innerHTML+=`<th class="head">
+                            <p class="heading"><i>Col-${col}</i></p>
+                            <input type="number" class="input">
+                        </th>`
+    for (var i = 2; i <noOfRow; i++) {
         allRow[i].innerHTML+=` <th class="head">    
                             <input type="number" class="input" style="width: 100%;">
                         </th>`}
@@ -131,6 +144,15 @@ function addColumn1(classname){
                         </td>`
     }
 }
+
+
+function RemoveColumn1(classname){
+   var allRow=document.getElementsByClassName(classname)  
+    var noOfRow=allRow.length
+    for (var i = 0; i <noOfRow; i++) {
+        allRow[i].removeChild(allRow[i].lastElementChild)    }
+}
+
 
 function addRow(id='twoWay',classname='dataRows2') {
     let oneWayTable=document.getElementsByClassName(classname)
@@ -163,11 +185,16 @@ function addRow1(classname='dataRows1',id='oneWay') {
     }
 
 
+function RemoveRow1(id='oneWay') {
+    let table=document.getElementById(id)
+    let tbody=table.children[0]
+    tbody.removeChild(tbody.lastElementChild)
+    }
 /* Function to generate analysis report table */
 function Report(){
 const {SSW, SSB, dfw, dfb,SST,MSW,MSB,F,dft}=AnovaTable
-const alpha=0.05
-const FcritValue=Number(Fcrit(0.05,dfb,dfw))
+const alpha=document.getElementById('alpha1').value
+const FcritValue=Number(Fcrit(alpha,dfb,dfw))
 const decison=FcritValue<F?`<b>Decision:</b> Reject the null hypothesis
 since $(${F})F_{stat}$>F_{crit}(${FcritValue})`:
 `<b>Decision</b>: We do not reject the null hypothesis

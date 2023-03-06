@@ -13,21 +13,37 @@
         <h1 class="anova">One Way Anova</h1>
    <div class="container">
     <div class="Nav">
+
         <div class="dropdown">
-            <button class="dropbtn">Switch way 
-              <i class="fa fa-caret-down"></i>
-            </button>
+            <button class="dropbtn">Switch way  </button>
             <div class="dropdown-content">
                 <span class="OneWay">One Way</span>
                 <span class="TwoWay">Two Way</span>
             </div>
           </div> 
-           <div class="btn">
-            <button class="button" onclick="addColumn1('dataRows1')"><span>Add Column </span></button>
+
+
+        <div class="dropdown">
+            <button class="dropbtn">Adjust column or row</button>
+            <div class="dropdown-content">
+
+                <div class="adjust-content">
+                    <button class="inner" onclick="addColumn1('dataRows1')">+</button>
+                    Column
+                    <button class="inner" onclick="RemoveColumn1('dataRows1')">-</button>
+                </div>
+
+                <div class="adjust-content">
+                    <button class="inner" onclick="addRow1('dataRows1')">+</button>
+                   Row
+                    <button class="inner" onclick="RemoveRow1('oneWay')">-</button>
+                </div>
+
+                
             </div>
-            <div class="btn">
-            <button class="button" onclick="addRow1()"><span>Add Row </span></button>
-           </div>
+        </div>
+
+          
     </div>
         <div class="form">
           <form action="">
@@ -36,18 +52,18 @@
                 <th class="head">
                 <p class="heading"><i>Column 1</i></p>
                   <input type="number" class="input input1" autofocus>
-                    </th>
-                        <th class="head">
-                            <p class="heading"><i>Column 2</i></p>
-                            <input type="number" class="input input1">
-                        </th>
-                        <th class="head">
-                            <p class="heading"><i>Column 3</i></p>
-                            <input type="number" class="input input1">
-                        </th>      
-                    </tr>
+                </th>
+                <th class="head">
+                    <p class="heading"><i>Column 2</i></p>
+                    <input type="number" class="input input1" autofocus>
+                </th>
+                <th class="head">
+                    <p class="heading"><i>Column 3</i></p>
+                    <input type="number" class="input input1"autofocus>
+                    </th>      
+                </tr>
 
-                    <tr class="dataRows1">
+                <tr class="dataRows1">
                         <td><input type="number" class="input input1"></td>
                         <td><input type="number" class="input input1"></td>
                         <td><input type="number" class="input input1"></td>
@@ -65,14 +81,21 @@
                         <td><input type="number" class="input input1"></td>
                     </tr>
                  </table>
+                 <input type="reset" class="reset" value="Clear all">
                 </form>
 
                  <div class="btm-nav">
-                    <input type="reset" class="reset" value="Clear all">
-                    <button class="button" id="compute" onclick="compute()" >Compute Result</button>
-                 </div>
-              
-              
+                    
+                    <div>
+                           
+                        <input type="number" value="0.05" class="degree" id="alpha1"> <br>
+                        <p class="degree-label">Significant level</p>
+                    </div>
+                    
+                      <div>
+                        <button id="compute" onclick="compute()" >Compute Result</button>
+                      </div>
+                 </div>              
             </form>
                </div>
    </div>
@@ -92,13 +115,29 @@
                 <span class="OneWay2">One Way</span>
                 <span class="TwoWay2">Two Way</span>
             </div>
-          </div> 
-            <div class="btn">
-             <button class="button" onclick="addColumn('dataRows2')"><span>Add Column </span></button>
-             </div>
-             <div class="btn">
-             <button class="button" onclick="addRow('twoWay')"><span>Add Row </span></button>
+          </div>
+          
+          
+          <div class="dropdown">
+            <button class="dropbtn">Adjust column or row</button>
+            <div class="dropdown-content">
+
+                <div class="adjust-content">
+                    <button class="inner"  onclick="addColumn('dataRows2')">+</button>
+                    Column
+                    <button class="inner" onclick="RemoveColumn1('dataRows2')">-</>-</button>
+                </div>
+
+                <div class="adjust-content">
+                    <button class="inner" onclick="addRow('twoWay')">+</button>
+                   Row
+                    <button class="inner" onclick="RemoveRow1('twoWay')">-</button>
+                </div>
+
+                
             </div>
+          </div>
+
      </div>
     
  
@@ -187,9 +226,13 @@
                      <div class="btm-nav">
                         <div>
                            
-                            <input type="number" class="degree" value="Alpha">
+                            <input type="number" class="degree" > <br>
+                            <p class="degree-label">Significant level</p>
                         </div>
-                        <button class="button">Compute Result</button>
+                        
+                        <div>
+                            <button onclick="compute2()">Compute Result</button>
+                        </div>
                      </div>                
               
                
@@ -201,30 +244,26 @@
 
  <div class="solution">
   <h3 class="SSWHeading"></h3>
-
-    <div id="check" class="animate-bottom"></div>
-
-    
-
-<div id="loader"></div>
-<div style="display:none;" id="myDiv" class="animate-bottom">
-    <div id="summary" class="animate-bottom"> </div>
+    <div id="check" class="animate-bottom"></div>    
+    <div id="loader"></div>
+<div style="" id="myDiv" class="animate-bottom">
+    <div id="summary" class="animate-bottom"></div>
          
     </div>
     
  </div>
-
+<div id="see">
+    
+</div>
 
 <script type="text/javascript" src="ftable.js"></script>
 <script src="anovaSSW.js"></script>
 <script src="anovaSSB.js" ></script>
+<script src="twoWay.js"></script>
 <script src="anovaCal.js"></script>
-
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
 <script >
-workingData=[[2,4,2,5],[9,4,5,2],[3,6,2,5]]
-compute()
 </script>
  <div></div>
 </body>
