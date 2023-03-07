@@ -25,7 +25,7 @@ function sumArray(array,dp=4){
 
 var transpose=(Matrix)=>Matrix[0].map((col,c)=>Matrix.map(row=>row[c]))
 function removeEmpty(arr,value){
- return arr.filter((el)=>el!=value)
+ return arr.filter((el)=>el!=value&&el!=undefined)
 }
 function removeEmptyFromMatrix(Matrix,value) {
   return Matrix.map((arr)=>removeEmpty(arr,value))

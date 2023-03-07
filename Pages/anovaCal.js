@@ -103,9 +103,11 @@ document.getElementById("check").style.display = 'none'
 function compute2(){
 document.getElementById('check').innerHTML=''
 dataSet2('dataRows2')
-workingData=workingData
-SSB2Way(workingData)
-Report2W(workingData)
+let cleanData=removeEmptyFromMatrix(workingData,'')
+cleanData=cleanData.filter((arr)=>arr.toString()!='')
+SSB2Way(cleanData)
+Report2W(cleanData)
+console.log(cleanData)
 latex()
 topFunction()
 document.getElementById("check").style.display = 'none'

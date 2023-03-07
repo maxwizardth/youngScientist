@@ -49,11 +49,10 @@ function SSB2Way(matrix){
 
  let SStotal=sqData(squareMatrix(matrix))
   let SSTgrnd=SStotal['grandSum']
-  let SST2W=(SSTgrnd/N).toFixed(2)
-  let step1=`<p>$ SS Tota(SS_total )=∑∑\\frac{T_{ij}^2}{n_{ij}} -C$<br>
-              $∑∑T_{ij}^2=${SSTgrnd}<br>$
-              $n_{ij}=${N}<br>$
-            $SS_{total}=\\frac{${SSTgrnd}}{${N}}$<br>
+  let SST2W=(SSTgrnd-C).toFixed(2)
+  let step1=`<p>$ SSTotal (SS_{total} )=∑∑T_{ij}^2 -C$<br>
+              $∑∑T_{ij}^2=${SSTgrnd}$<br>
+            $SS_{total}=${SSTgrnd}-${C}$<br>
             $SS_{total}=${SST2W}$<br>`
      AnovaTable['SST']=SST2W
       AnovaTable['SSW']=(SST2W-AnovaTable['SSBr']-
@@ -147,9 +146,9 @@ const Fcritcol=Number(Fcrit(alpha,dfbc,dfw))
 var decision=function(crit,stat,dfb,dfw,alpha,part){
 const decison=crit<stat?`
 <b>Decision:</b> Reject the null hypothesis
-since $(${stat})F_{stat}$>F_{crit}(${crit})`:
+since $(${stat})F_{stat}>F_{crit}(${crit})$`:
 `<b>Decision</b>: We do not reject the null hypothesis
-since $(${stat})F_{stat} < F_{crit}(${crit})$`
+since $(${stat})F_{stat} < F_{crit} (${crit})$`
 const conclusion=crit<stat?`<p><b>Conclusion:</b>at ${alpha} level of significant We have enough evidence to 
 conclude that there is significant different Between the means or all the means are the same are not the same</p>`:
 `<p><b>Conclusion:</b>at ${alpha} level of significant The data do not have enough evidence to 
@@ -170,7 +169,7 @@ const table=`
         <th class="styleTh">Sources Of Variation</th>
         <th class="styleTh">SS</th>
         <th class="styleTh">df</th>
-        <th class="styleTh">MSS=SS/df</th>
+        <th class="styleTh">MSS= SS/df</th>
         <th class="styleTh">F</th>
        </tr>
         <tr>
