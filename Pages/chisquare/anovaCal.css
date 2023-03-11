@@ -1,0 +1,390 @@
+html{
+  font-size: 16px;
+  font-family: arial;
+}
+
+body {
+  
+  margin: 0px;
+  padding: 10px;
+}
+*{
+ scroll-behavior: smooth;
+}
+.ssb{
+  color: red;
+  text-align: left;
+}
+
+.frame, .frame2{
+  margin: 0 auto;
+position: relative;
+background: green;
+border-radius: 5px;
+max-width: 300px;
+height: auto;
+padding: 25px;
+}
+
+.frame2{
+  display: none;
+}
+
+.anova{
+color: white;
+text-align: center;
+font-size: 20px;
+}
+
+.Nav{
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+ 
+
+}
+button{
+  border-radius: 3px;
+  outline: none;
+  border: none;
+  padding: 12px;
+  font-size: 12px;
+  cursor: pointer;
+  background: white;
+  transition: .3s;
+}
+
+
+
+
+.dropdown {
+  float: none;
+  transition: .5s;
+  
+ 
+}
+
+.dropdown .dropbtn {
+  font-size: 12px;  
+  border: none;
+  outline: none;
+  color: black;
+  padding: 12px;
+  background-color: white;
+  font-family: inherit;
+  border-radius: 3px;
+  margin: 0;
+  transition: .3s;
+}
+
+.dropdown:hover .dropbtn:hover {
+  background-color: #ddd;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 100px;
+  font-size: 12px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+ 
+  transition: 2s;
+  opacity: 0.8;
+  transition: .5s;
+}
+
+.dropdown-content div {
+  float: none;
+  color: black;
+  padding: 10px ;
+  text-decoration: none;
+  display: inline-block;
+  text-align: left;
+}
+
+
+.dropdown-content span {
+  float: none;
+  color: black;
+  padding: 10px ;
+  text-decoration: none;
+  display:block;
+  text-align: left;
+  cursor: pointer;
+  transition: ease-in .2s;
+}
+
+.inner:hover {
+  background-color: #ddd;
+}
+
+.dropdown-content span:hover, button:hover{
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content{
+  display: block;
+  opacity: 1;
+ 
+}
+
+.adjust-content{
+  padding: 10px;
+ 
+}
+
+.inner{
+  padding: 10px ;
+  font-weight: bold;
+  border: 1px #ddd solid;
+  border-radius: 6px;
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+  transition: ease-in .2s;
+  cursor: pointer;
+}
+table{
+  padding: 20px;
+  margin-top: 20px;
+}
+.row{
+color: white;
+font-size: 10px;
+margin-left: -20px;
+}
+.heading{
+  font-size: 11px;
+  color: white;
+  margin-top: 10px;
+}
+
+
+.input{
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 25px;
+  margin: 0px;
+  border-radius: 3px;
+  text-align: center;
+  font-weight: bold;
+   
+}
+.degree{
+  border: none;
+  outline: none;
+  width: 60px;
+  height: 25px;
+  margin: 0px;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: bold;
+}
+.degree-label{
+  font-size: 12px;
+  color: white;
+  margin-top: 2px;
+}
+.btm-nav{
+display: flex;
+justify-content: space-between;
+padding: 0px;
+}
+.reset{
+  display: flex;
+justify-content: flex-end;
+align-content: flex-end;
+align-items: flex-end;
+padding: 12px;
+border-radius: 3px;
+border: none;
+cursor: pointer;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{-webkit-appearance:none;} 
+    
+
+
+
+.solution{
+       display: block;
+       max-width: 80vw;
+       margin: 30px auto;
+      }
+
+      .styleTd{
+        padding: 5px;
+      }
+
+      .styleTh{
+        padding: 10px;
+      }
+
+      #check{
+       
+        display: none;
+        flex-wrap: wrap;
+       
+       
+      }
+
+      .eachWork{
+        padding: 20px 50px;
+       text-align: center;
+       border: 2px black solid;
+       margin: 10px 20px;
+      }
+
+      .SSWHeading{
+        color: red;
+        text-align: center;
+        position: relative;
+        display: none;
+        font-size: 15px;
+      }
+      #summary{
+        margin: 20px auto;
+        max-width: 400px; 
+        padding: 0px 40px;
+      }
+
+      .details{
+        border: 1px solid black;
+        border-radius: 5px;
+      }
+      .animate-bottom{
+        position: relative;
+        -webkit-animation-name: animatebottom;
+        -webkit-animation-duration: 1s;
+        animation-name: animatebottom;
+        animation-duration: 1s
+      }
+      
+      @-webkit-keyframes animatebottom {
+        from { bottom:-100px; opacity:0 } 
+        to { bottom:0px; opacity:1 }
+      }
+      
+      @keyframes animatebottom { 
+        from{ bottom:-100px; opacity:0 } 
+        to{ bottom:0; opacity:1 }
+      }
+
+
+     
+      
+.std{  border-collapse: collapse;
+       text-align: center;}
+
+
+       /* Center the loader */
+#loader {
+  position: relative;
+  margin: 0 auto;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  display: none;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#myDiv {
+ 
+  text-align: center;
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 700px){
+  .frame, .frame2{
+  max-width: 95vw;
+  }
+
+  body {
+  
+    margin: 0px;
+    padding: 10px;
+  }
+  
+  }
+  
+  
+  @media screen and (max-width: 901px){
+    .eachWork{
+      padding: 20px;
+      text-align: center;
+    
+    }
+
+    .latex{
+      font-size: 2.5vw;
+    }
+
+    .solution{
+      display: block;
+       max-width: 80vw;
+       margin: 30px auto;
+     }
+    
+    }
+
+    @media screen and (max-width: 754px){
+      .eachWork{
+        padding: 20px;
+        width: 100vw;
+       border: 2px brown solid;
+      }
+  
+      .solution{
+        display: block;
+         max-width: 600px;
+         margin: 30px auto;
+
+       }
+
+       #check{
+        display: block;
+       }
+
+       #summary{
+        width: 100%;
+        margin: 20px auto;
+        max-width: 100%; 
+        padding: 0px;
+        
+       }
+
+       .summary-table{
+        font-size: 12px;
+       }
+      
+      }
+      
+    .eachWork{display: inline-block;}
+    .toggle{display: none;}
+    #hypothesis{color: red}
