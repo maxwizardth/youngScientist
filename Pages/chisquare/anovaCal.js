@@ -155,9 +155,3 @@ document.getElementById('compute').addEventListener('click', () => {
   }, 3000);
   
 })
-
-
-
-var m=[[3,2,4],[9,8,7],[2,3,4]]
-ChiSq(m)
-solveSummary(m)
