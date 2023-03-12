@@ -47,6 +47,7 @@ var chiTab={
 
 var sig={0.995:0, 0.99:1,0.975:2,0.95:3,0.9:4,
          0.1:5,0.05:6,0.025:7,0.01:8}
-function chiCrit(df,alpha){
+function chiCrit(df,alpha=0.05){
   return chiTab[df][sig[alpha]]
 }
+

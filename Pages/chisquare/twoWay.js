@@ -73,50 +73,171 @@ return `<table class='std' border=2
              ${tableRow(tablerow)}
              </table>`
 }
-function ChiSq(data){
+
+
+function sumMatrix(matrix,dp=2) {
+   newMatrix=matrix.map((row)=>sumArray(row,dp))
+   return sumArray(newMatrix,dp)
+ }
+
+function labeling(matrix){
+ var rowlabel=matrix.map((row,index)=>`<b>Row  ${index+1}</b>`)
+ var collabel=transpose(matrix).map((row,index)=>`<b>Col ${index+1}</b>`)
+var joint2=rowlabel.map(()=>collabel)
+var joint1=joint2.map((row,index)=>row.map(()=>`<b>Row ${index+1}</b>`))
+joint1=MTA(joint1)
+joint2=MTA(joint2)
+return [joint1,joint2]
+}
+
+function summaryTab(data,dp=2) {
+  const {tableSum,grandSum,N,
+  originalData, expTable, error,
+  errorSq, chi, chiSq, df,nrow,ncol}=chisqData(data)
+  var label=labeling(data)
+  var label1=['<b>Rows</b>',...label[0],'<b>Total</b>']
+  var label2=['<b>Colums</b>',...label[1],' ']
+  var obs=['<b>O</b>',...MTA(originalData),`<b>${sumMatrix(originalData)}</b>`]
+  var expt=['<b>E</b>',...MTA(expTable),`<b>${sumMatrix(expTable)}</b>`]
+  var err=['<b>D</b>',...MTA(error),`<b>${sumMatrix(error)}</b>`]
+  var errSq=['<b>D<sup>2</sup></b>',...MTA(errorSq),`<b>${sumMatrix(errorSq)}</b>`]
+  var xsq=['<b>D<sup>2</sup>/E</b>',...MTA(chi),`<b>${sumMatrix(chi)}</b>`]
+  var Fstat=sumMatrix(chi)
+  var summary=[label1,label2,obs,expt,err,errSq,xsq]
+  var alpha=document.getElementById('alpha2').value
+  var crit=chiCrit(df,alpha)
+  var decide=decision(crit,Fstat,alpha)
+  chiFormu=`
+            <h3>$X^2 =\\sum \\frac{(O-E)^2}{E}$<br>
+            $X^2 =${chiSq}$</h3>
+            <p >$df=(r-1)(c-1)$<br><br>
+              $r=${nrow[0]}, c=${ncol[0]}$<br><br>
+              $df=(${nrow[0]}-1)(${ncol[0]}-1)$<br><br>
+              $df=${nrow[0]-1}*${ncol[0]-1}=${df}$<br>
+              $\\alpha=${alpha}$
+              </p>
+              <p>$X_{crit}=${crit}$
+              </p>
+              ${decide}
+
+              `
+
+  return createTable(transpose(summary))+chiFormu
+}
+
+
+
+  function ChiSq(data){
  const {tableSum,grandSum,N,
   originalData, expTable, error,
   errorSq, chi, chiSq, df,nrow,ncol}=chisqData(data)
+   
  let table= `
-             <p id='hypothesis'><b>H<sub>0:</sub> Variable1 (column) and variable2 (Rows) are not related in the population;<br><br>
-              H<sub>a</sub>: Variable1 (column) and  variable2 (Rows) are related in the population
-              </b></p>
-
              <div class='eachWork'>
             <h3 style="margin-left:-14px;">Observed values (O)</h3>
              ${createTable(transformData(originalData))}
+             ${workingTotal(originalData)}
              </div>
 
              <div class='eachWork'>
              <h3 style="margin-left:-14px;">Expected values (E)</h3>
-             ${createTable(transformData(expTable))}
+             ${Expected(originalData)}
              </div>
 
-             <div class='eachWork toggle'>
-             <h3 style="margin-left:-14px;">error value (O-E)</h3>
-             ${createTable(transformData(error))}
-             </div>
-
-             <div class='eachWork toggle'>
-            <h3 style="margin-left:-14px;">err-square $(O-E)^2$</h3>
-             ${createTable(transformData(errorSq))}
-            </div>
-
-             <div class='eachWork' >
-            <h3 style="margin-left:-14px;">X of CHI-Sq $\\frac{(O-E)^2}{E}$</h3>
-             ${createTable(transformData(chi))}
-             <h3>$X^2 =\\sum \\frac{(O-E)^2}{E}$<br>
-            $X^2 =${chiSq}$</h3>
-            </div>
-
+             <div class='eachWork'>
+             <h3 style="margin-left:-14px;">Expected values (E)</h3>
             
-            <p class='toggle'>df=(r-1)(c-1)<br><br>
-              r=${nrow[0]}, c=${ncol[0]}<br><br>
-              df=(${nrow[0]}-1)(${ncol[0]}-1)<br><br>
-              df=${nrow[0]-1}*${ncol[0]-1}<br><br>
-              df=${df}
+             ${createTable(transformData(expTable))}
+             ${workingTotal(expTable)}
+             </div>
+
+             <div class='eachWork '>
+             <h3 style="margin-left:-14px;">Deviation (O-E)</h3>
+             ${deviation(originalData,expTable)}
+             </div>
             `
 document.getElementById('check').innerHTML=table
-document.getElementById('check').style.display='block'
+latex()
 
+}
+
+
+
+function MTA(matrix){
+      let array=[]
+      matrix.forEach((row)=>array=[...array,...row])
+      return array
+}
+
+function workingTotal(matrix) {
+  rows=`<div> <h3>Rows and Columns Total</h3>`
+  sumItem=[]
+  matrix.forEach((row,index)=>
+    {rows+=`<p>R $_{${index+1} total} = $ ${MargeArray(row,"+")}</p>
+    <p>R $_{${index+1}total} =$ ${sumArray(row)}</p>`
+    sumItem.push(sumArray(row))})
+  transpose(matrix).forEach((row,index)=>
+    {rows+=`<p>C $_{${index+1}total} = $ ${MargeArray(row,"+")}</p>
+    <p>C $_{${index+1}total} =$ ${sumArray(row)}</p>`})
+
+  var step2=`<p>$Total_{grand}=${MargeArray(sumItem,"+")}$</p>
+             <p>$Total_{grand}=${sumMatrix(matrix)}$</p>`
+  return rows+step2+"</div>"
+ } 
+
+ function deviation(matrix1,matrix2) {
+  working=`<h4>$D_{ij}=O_{ij}-E_{ij}$</h4>`
+  matrix1.forEach((row,i)=>{
+     row.forEach((col,j)=>{
+      step1=`<p><h4>$D_{${i+1},${j+1}}=O_{${i+1},${j+1}}-E_{${i+1},${j+1}}$</h4>
+                $D_{${i+1},${j+1}}=${col}-${matrix2[i][j]}$<br>
+                $D_{${i+1},${j+1}}=$${(col-matrix2[i][j]).toFixed(2)}
+              </p>`
+      working+=step1})
+    })
+    return working
+  }
+
+function Expected(matrix) {
+  working=``
+  let label=labeling(matrix)
+  allSums=chisqData(matrix)['tableSum']
+  rowSums=allSums[0]
+  colSums=allSums[1]
+  grandSum=chisqData(matrix)['grandSum']
+  rowSums.forEach((row,i)=>{
+     colSums.forEach((col,j)=>{
+      step1=`<p><h4>$E_{R${i+1},C${j+1}}=\\frac{R_{${i+1}total}*C_{${j+1}total}}{Total_{grand}}$</h4>
+                $E_{${i+1},${j+1}}= \\frac{${row}*${col}}{${grandSum}}$
+                = ${(row*col/grandSum).toFixed(2)}
+              </p>`
+      working+=step1
+     })
+  })
+  return working
+}
+
+var decision=function(crit,stat,alpha){
+const decison=crit<stat?`
+<b>Decision:</b> Reject the null hypothesis
+since $(${stat})F_{stat}>F_{crit}(${crit})$`:
+`<b>Decision</b>: We do not reject the null hypothesis
+since $(${stat})F_{stat} < F_{crit} (${crit})$`
+const conclusion=crit<stat?`<p><b>Conclusion:</b>at ${alpha} level of significant We have enough evidence to 
+conclude that the variables are related</p>`:
+`<p><b>Conclusion:</b>at ${alpha} level of significant The data do not have enough evidence to 
+indicate that the given variables are related</p>`
+var summary=`<p>${decison}
+              ${conclusion}
+              </p>`
+return summary}
+
+function solveSummary(data){
+  document.getElementById('summary').innerHTML=
+  ` <p id='hypothesis'><b>H<sub>0:</sub> Variable1 (column) and variable2 (Rows) are not related in the population;<br><br>
+              H<sub>a</sub>: Variable1 (column) and  variable2 (Rows) are related in the population
+              </b></p>
+     ${summaryTab(data)}
+  <button class="details" onclick="ShowDetails()">Show full details</button>
+`
 }

@@ -1,7 +1,3 @@
-
-var AnovaTable={SSW:0,SSB:0,dfw:0,
-                    dfb:0,SST:0,MSW:0,
-                    MSB:0,F:0,dft:0}
 /*function to sum all value in array*/  
 function sumArray(array,dp=4){
   var result=0
@@ -30,6 +26,7 @@ function removeEmpty(arr,value){
 function removeEmptyFromMatrix(Matrix,value) {
   return Matrix.map((arr)=>removeEmpty(arr,value))
 }
+
 function sd(arrayDat,dp=3){
 let arrayData=arrayDat
 let sum=sumArray(arrayData)
@@ -44,65 +41,13 @@ return {sum:sum,n:n,mean:mean,dev:dev,sqDev:sqDev,
         sumSqDev:sumSqDev,variance:variance,std:std,
         sdTable:transpose([[...arrayData,sum],[...dev,0],[...sqDev,sumSqDev]])}}
 
-function SS(array,idElement,dp,ij){
-    let sdDetails=sd(array)
-    let sdTable=sdDetails.sdTable
-
-let table=`<table class='std' border=2 
-            style="border-collapse: collapse;
-           text-align: center;">
-            <tr>
-             <th class="styleTh">$x_${ij}$</th>
-             <th>$x_${ij}-\\bar x_${ij}$</th>
-             <th>$(x_${ij}-\\bar x_${ij})^2$</sup>
-             </tr>
-             ${tableRow(sdTable)}
-             </table>`
-
-let Rough1=`<div>
-             <p>$\\sum x_${ij}=${sdDetails.sum}$<br>
-                $N=${sdDetails.n}$<br><br>
-                $\\bar x_${ij}=\\frac{\\sum x}{N}$<br><br>
-                $\\bar x_${ij}=${sdDetails.sum}/${sdDetails.n}$<br>
-                $\\bar x_${ij}=${sdDetails.mean}$<br><br>
-                $\\sum (x_${ij}-\\bar x_${ij})^2=${sdDetails.sumSqDev}$<br>
-                $SS_${ij}=${sdDetails.sumSqDev}$<br>
-                </p>
-             </div>`
-
-document.getElementById(idElement).innerHTML+=`<div class="eachWork">
-     <h4>Mean and Sum of Square $X_{${ij}}$</h4>`+table+Rough1+'</div>';
-     return sdDetails}
-
-function SSWAnova(matrix){ 
-    let allSS=[]
-  document.getElementsByClassName('SSWHeading')[0].innerHTML=
-"Mean and Sum of Square Within the Groups"
-  AnovaTable.dft=0
-    matrix.map((row,col)=>{
-        let ss=SS(row,'check',2,col).sumSqDev
-        allSS.push(ss)
-        AnovaTable.dft+=row.length}
-        )
-    const SSW=sumArray(allSS)
-    const SSWadd=MargeArray(allSS,'+')
-    document.getElementById('check').innerHTML+=
-    `<div class="eachWork" style="padding: 20px 12px; font-size: 14px;">
-  <h4>Sum of Square within the Group</h4>
-      <p>$SSW=SS_0 + SS_1 + SS_2 + SS_3 + ....+SS_n$<br>
-       SSW=${SSWadd}      <br>
-      SSW=${SSW}
-      </div>`;
-      AnovaTable.SSW=Number(SSW)}
-
 /*function to get the list of mean*/
 function MeanArray(arrayDat,dp=3){
-let means=[]
-arrayDat.map((row,col)=>
-{let sum=sumArray(row)
-let n=row.length
-let mean=(sum/n).toFixed(dp)
-means.push(mean)})
+let means=arrayDat.map((row,col)=>{
+  let sum=sumArray(row)
+  let n=row.length
+  let mean=(sum/n).toFixed(dp)
+   return mean})
 return means}
 
 
@@ -197,59 +142,20 @@ function RemoveRow1(id='oneWay') {
     }
 /* Function to generate analysis report table */
 function Report(){
-const {SSW, SSB, dfw, dfb,SST,MSW,MSB,F,dft}=AnovaTable
-const alpha=document.getElementById('alpha1').value
-const FcritValue=Number(Fcrit(alpha,dfb,dfw))
-const decison=FcritValue<F?`<b>Decision:</b> Reject the null hypothesis
-since $(${F})F_{stat}$>F_{crit}(${FcritValue})`:
-`<b>Decision</b>: We do not reject the null hypothesis
-since $(${F})F_{stat} < F_{crit}(${FcritValue})$`
-const conclusion=FcritValue<F?`<p><b>Conclusion:</b>at ${alpha} level of significant We have enough evidence to 
-conclude that there all the means are not the same</p>`:
-`<p><b>Conclusion:</b>at ${alpha} level of significant We do not have enough evidence to 
-conclude that there all the means are not the same</p>`
-const table=`<table style="border-collapse:collapse;
-                           margin:14px;" border=2>
-           <tr>
-        <th class="styleTh">Sources Of Variation</th>
-        <th class="styleTh">SS</th>
-        <th class="styleTh">df</th>
-        <th class="styleTh">MST=SS/df</th>
-        <th class="styleTh">F</th>
-       </tr>
-
-
-           <tr>
-            <td><b>Between Groups</b></td>
-            <td>${SSB}</td>
-            <td>${dfb}</td>
-            <td>${MSB}</td>
-            <td>${F}</td>
-           </tr>
-           <tr>
-            <td><b>Between Groups</b></td>
-            <td>${SSW}</td>
-            <td>${dfw}</td>
-            <td>${MSW}</td>
-            <td></td>
-           </tr>
-           <tr>
-            <td><b>Total</b></td>
-            <td>${SST}</td>
-            <td>${dft}</td>
-            <td></td>
-            <td></td>
-           </tr>
-        </table>
-        <p>$\\alpha =${alpha}$<br>
-           $F_{${alpha}(${dfb},${dfw})}=${FcritValue}$<br>
-            ${decison}</p>
-        ${conclusion}
-        <button class="details" onclick="ShowDetails()">Show full details</button>
-     
-           `
+  var table=`<button class="details" onclick="ShowDetails()">Show full details</button>`
 document.getElementById('summary').innerHTML=table
 }
+
+
+function Marge2Array(array1,array2,conj1,conj2){
+  var result=''
+  array1.forEach((value,index)=>{
+    result=result+value+conj1+array2[index]+" "+conj2+" "})
+  console.log(result)
+  return result.slice(0,-2)
+  }
+
+
 
 
 

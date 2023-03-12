@@ -106,7 +106,7 @@ dataSet2('dataRows2')
 let cleanData=removeEmptyFromMatrix(workingData,'')
 cleanData=cleanData.filter((arr)=>arr.toString()!='')
 ChiSq(cleanData)
-console.log(cleanData)
+solveSummary(cleanData)
 latex()
 topFunction()
 }
@@ -158,3 +158,6 @@ document.getElementById('compute').addEventListener('click', () => {
 
 
 
+var m=[[3,2,4],[9,8,7],[2,3,4]]
+ChiSq(m)
+solveSummary(m)
