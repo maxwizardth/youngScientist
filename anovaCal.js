@@ -43,11 +43,29 @@ function latex(){(function () {
   }
 })();}
 
+
 /*____________________latex end ________________________*/
 
+function dataSet(id){
+    let allTr=document.getElementsByClassName(id)
+    let noOfRow=allTr.length
+    var data=[]
+    var i=0
+    while(noOfRow>i){
+    let tr=allTr[i].children
+    let colData=Array.from(tr).map(td=>{
+    let node=td.firstElementChild.tagName=='P'?1:0
+        return td.children[node].value})
+    data.push(colData)
+    i++
+    }
+    workingData=data
+    return data
+    console.log(data)
+}
 
-function dataSet(){
-    let allTr=document.getElementsByClassName('dataRows1')
+function dataSet2(id){
+    let allTr=document.getElementsByClassName(id)
     let noOfRow=allTr.length
     var data=[]
     var i=0
@@ -56,7 +74,8 @@ function dataSet(){
     let colData=Array.from(tr).map(td=>{
     let node=td.firstElementChild.tagName=='P'?1:0
         return Number(td.children[node].value)})
-    data.push(colData)
+    j=colData.slice(1,)
+    data.push(j)
     i++
     }
     workingData=data
@@ -71,8 +90,8 @@ Array.from(allInput).forEach(input=>input.addEventListener('input',dataSet))
 
 function compute(){
 document.getElementById('check').innerHTML=''
-dataSet()
-workingData=transpose(workingData)
+dataSet('dataRows1')
+workingData=removeEmptyFromMatrix(transpose(workingData),'')
 SSWAnova(workingData)
 SSB(workingData)
 Report()
@@ -81,8 +100,16 @@ topFunction()
 document.getElementById("check").style.display = 'none'
 }
 
-
-
+function compute2(){
+document.getElementById('check').innerHTML=''
+dataSet2('dataRows2')
+let cleanData=removeEmptyFromMatrix(workingData,'')
+cleanData=cleanData.filter((arr)=>arr.toString()!='')
+ChiSq(cleanData)
+solveSummary(cleanData)
+latex()
+topFunction()
+}
 
 
 function topFunction() {
@@ -125,6 +152,6 @@ document.getElementById('compute').addEventListener('click', () => {
       document.querySelector("#myDiv").style.display= 'block'
       document.querySelector(".SSWHeading").style.display= 'block'
      
-  }, 100);
+  }, 3000);
   
 })
