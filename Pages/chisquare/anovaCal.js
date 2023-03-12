@@ -109,6 +109,8 @@ ChiSq(cleanData)
 solveSummary(cleanData)
 latex()
 topFunction()
+    document.getElementById("check").style.display = 'none'
+
 }
 
 
