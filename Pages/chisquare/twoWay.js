@@ -222,7 +222,7 @@ const decison=crit<stat?`
 <b>Decision:</b> Reject the null hypothesis
 since $(${stat})F_{stat}>F_{crit}(${crit})$`:
 `<b>Decision</b>: We do not reject the null hypothesis
-since $(${stat})F_{stat} < F_{crit} (${crit})$`
+since $(${stat})X_{stat} < X_{crit} (${crit})$`
 const conclusion=crit<stat?`<p><b>Conclusion:</b>at ${alpha} level of significant We have enough evidence to 
 conclude that the variables are related</p>`:
 `<p><b>Conclusion:</b>at ${alpha} level of significant The data do not have enough evidence to 
