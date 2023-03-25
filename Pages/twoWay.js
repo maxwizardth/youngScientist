@@ -139,7 +139,7 @@ function Report2W(matrix){
 const {MSBc,MSBr,MSW,SSBc,SSBr,SST,SSW,dfbc,dfbr,dft,dfw}=SSB2Way(matrix)
 const Frow=(MSBr/MSW).toFixed(2)
 const Fcol=(MSBc/MSW).toFixed(2)
-const alpha=document.getElementById('alpha2').value
+const alpha = document.getElementsByName("alpha2Val")[0].value;
 const Fcritrow=Number(Fcrit(alpha,dfbr,dfw))
 const Fcritcol=Number(Fcrit(alpha,dfbc,dfw))
 
