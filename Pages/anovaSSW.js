@@ -198,7 +198,8 @@ function RemoveRow1(id='oneWay') {
 /* Function to generate analysis report table */
 function Report(){
 const {SSW, SSB, dfw, dfb,SST,MSW,MSB,F,dft}=AnovaTable
-const alpha=document.getElementById('alpha1').value
+const alpha = document.getElementsByName("alpha1Val")[0].value;
+
 const FcritValue=Number(Fcrit(alpha,dfb,dfw))
 const decison=FcritValue<F?`<b>Decision:</b> Reject the null hypothesis
 since $(${F})F_{stat}$>F_{crit}(${FcritValue})`:
