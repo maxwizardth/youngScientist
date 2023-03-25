@@ -228,7 +228,7 @@ const table=`<table style="border-collapse:collapse;
             <td>${F}</td>
            </tr>
            <tr>
-            <td><b>Between Groups</b></td>
+            <td><b>Within Groups</b></td>
             <td>${SSW}</td>
             <td>${dfw}</td>
             <td>${MSW}</td>
