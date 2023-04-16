@@ -1,0 +1,74 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[english]{babel}
+
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{Your Paper}
+\author{You}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Your abstract.
+\end{abstract}
+
+if set of vector {$V_1,V_2,V_3,V_4$} are linearly independent then \\
+
+$\alpha_1 V_1+\alpha_2 V_2+\alpha_3 V_3+ \alpha_4 V_4$ =
+$\begin{pmatrix}
+0\\0\\0\\0
+\end{pmatrix}
+$ only if $\alpha_1 = \alpha_2 =\alpha_3= \alpha_4=0$\\
+Now let us consider set of vector ${V_1+V_2,V_2,V_3,V_4}$
+we need to show that,\\
+
+$\beta_1 (V_1+V_2)+\beta_2 V_2+\beta_3 V_3+ \beta_4 V_4$ =
+$\begin{pmatrix}
+0\\0\\0\\0
+\end{pmatrix}
+$ 
+ only if $\beta_1 = \beta_2 =\beta_3= \beta_4=0$\\\\
+Proof:\\
+$\beta_1 (V_1+V_2)+\beta_2 V_2+\beta_3 V_3+ \beta_4 V_4$ =
+$\begin{pmatrix}
+0\\0\\0\\0
+\end{pmatrix}
+$ \\
+
+$\beta_1 V_1+ \beta_1 V_2+\beta_2 V_2+\beta_3 V_3+ \beta_4 V_4$ =
+$\begin{pmatrix}
+0\\0\\0\\0
+\end{pmatrix}
+$ 
+
+$\beta_1 V_1+ (\beta_1 +\beta_2) V_2+\beta_3 V_3+ \beta_4 V_4$ =
+$\begin{pmatrix}
+0\\0\\0\\0\\
+\end{pmatrix}$
+
+let $\beta_v=\beta_1+\beta_2$ then,\\
+
+$\beta_1 V_1+ \beta_v  V_2+\beta_3 V_3+ \beta_4 V_4$ =
+$\begin{pmatrix}
+0\\0\\0\\0\\
+\end{pmatrix}$\\
+Since we know that $V_1,V_2,V_3,V_4$ are linearly independent then \\ $\beta_1=\beta_v=\beta_3=\beta_4=0$\\
+Reca that $\beta_3=\beta_1+\beta_2$\\
+so, $\beta_1+\beta_2=0$\\ 
+since $\beta_1=0$ then, $0+\beta_2$=0\\  
+therefore, $\beta_2=0$\\
+Hence, $\beta_1=\beta_2=\beta_3=\beta_4=0$\\ 
+Since , $\beta_1=\beta_2=\beta_3=\beta_4=0$\\ 
+then the set of vector  {$V_1+V_2,V_2,V_3,V_4$} are linearly independent then 
+\end{document}
