@@ -1,12 +1,6 @@
  \documentclass[45pt]{article}
 \usepackage{blindtext}
-
-% Language setting
-% Replace `english' with e.g. `spanish' to change the document language
 \usepackage[english]{babel}
-
-% Set page size and margins
-% Replace `letterpaper' with `a4paper' for UK/EU standard size
 \usepackage[letterpaper,total={6in,8in},top=2cm, bottom=2cm, left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
 \usepackage{mathptmx}
 \usepackage[10pt]{moresize}
@@ -18,6 +12,7 @@
 \usepackage{mathptmx}
 \usepackage{anyfontsize}
 \usepackage{t1enc}
+\usepackage[utf8]{inputenc}
 
 \title{GROUP 1}
 \author{Project 1}
@@ -25,7 +20,9 @@
 \begin{document}
 \begin{titlepage}
     \begin{center}
-        \vspace*{1cm}
+        {\fontsize{70}{70}\selectfont MAT 212}
+        
+        \vspace{1cm}
         \Huge
         \textbf{Linear Algebra}
         
@@ -34,7 +31,7 @@
         Vector Space
         
         \vspace{0.5cm}
-        {\fontsize{70}{70}\selectfont Group 1}
+        {\fontsize{50}{50}\selectfont Group 1}
         \vspace{0.6cm}        
             
         A project providing solution to  different problems on \\vector Space.
@@ -52,6 +49,44 @@
             
     \end{center}
 \end{titlepage}
+\begin{center}
+\LARGE
+\begin{tabular} { |p {1 cm}| p {5 cm} | p {2 cm} | p {5 cm} | p{2.2cm}|}
+
+    \hline
+    \multicolumn{5} { | c | }{\LARGE{Contributors}}\\
+    \hline
+    Sn & Names & Matric & Skill &Signature\\
+    \hline
+1& Oladejo abdullahi Titlayo & 221382 & maths and webdev Tutor&\\
+\hline
+ 2& Ladoja Abimifoluwa Jemimah & 222667 & copy writing&\\
+ \hline
+3 & Oladapo Testimony Emmanuel & 222678& NFA&\\
+  \hline
+ 4 & Akinsola, Qudus Oladimeji & 221375 & Graphics Design&\\
+\hline
+ 5&OLUWADARA ADEOLUWA & 222691 & Product Management&\\
+  \hline
+  4&BLESSING ADEBAYO & 222634& GRAPHIC DESIGN&\\
+  \hline
+  7&Joshua Ebenezer Dayo & 222665& NFA&\\
+  \hline
+  8&Olanrewaju Bunmi Emmanuel &222681& Laptop Repair Specialist / content Creator&\\
+  \hline
+  9 & Falola Micheal Oluwatobi & 223769 &  web Design&\\
+ \hline
+ 10&Oladipupo Joy Oluwatomisin & 230179 & entrepreneur&\\
+  \hline
+11& Olatunde Victor Olubiyi & 222686 &  NFA&\\
+   
+    \hline
+ \end{tabular}
+ \end{center}
+ \vspace{2.0cmq}
+
+
+ 
 \section*{\Huge{Project 1}}
 \Large{\pmb{Questions}}
 \begin{enumerate}
@@ -168,14 +203,13 @@ $ there ~ exist \begin{pmatrix}
     \end{pmatrix} 
     \in X
       $ \\\\
-\pmb{Hence X is not empty.} \\ \\ 
+\pmb{Hence X is not empty.} \\\\ 
 
 choose $A, B \in X $, since A and B are symmetric matrix     `then \\\\
 $ a_{i,j}=a_{j,i} ~ and ~ b_{i,j}=b_{j,i} ~ (where ~ 1 \leq i \leq n ~and ~1 \leq j \leq n )\\$
 $a_{ij} ~ and ~ b_{i,j}$~ denote~ entry~ in~ row-i ~column-j ~in ~A~ and ~B~ respectively
 
 let say,
-
 $A= \begin{pmatrix}
     & a_{1,1} & a_{1,2} & a_{1,3} &.&.&.& a_{1,n}  \\
     & a_{2,1} & a_{2,2} & a_{2,3} &.&.&.& a_{2,n}  \\
@@ -238,20 +272,19 @@ $A+ \alpha B =\begin{pmatrix}
         \end{pmatrix}\\\\
     $
 
-$
-    A+ \alpha B =
+$  A+ \alpha B =
     \begin{pmatrix}
         
-        & a_{1,1} \alpha + b_{1,1} & a_{1,2} + \alpha b_{1,2} & a_{1,3} + \alpha b_{1,3}  &.&.&.& a_{1,n} +\alpha b_{1,n}  \\
-        & a_{2,1} \alpha + b_{2,1} & a_{2,2} + \alpha b_{2,2} & a_{2,3} + \alpha b_{2,3}  &.&.&.& a_{2,n} +\alpha b_{2,n}  \\
-        & a_{3,1} \alpha + b_{3,1} & a_{3,2} + \alpha b_{3,2} & a_{3,3} + \alpha b_{3,3}  &.&.&.& a_{3,n} +\alpha b_{3,n}  \\
+        & a_{1,1} +\alpha b_{1,1} & a_{1,2} + \alpha b_{1,2} & a_{1,3} + \alpha b_{1,3}  &.&.&.& a_{1,n} +\alpha b_{1,n}  \\
+        & a_{2,1}  + \alphab_{2,1} & a_{2,2} + \alpha b_{2,2} & a_{2,3} + \alpha b_{2,3}  &.&.&.& a_{2,n} +\alpha b_{2,n}  \\
+        & a_{3,1} + \alpha b_{3,1} & a_{3,2} + \alpha b_{3,2} & a_{3,3} + \alpha b_{3,3}  &.&.&.& a_{3,n} +\alpha b_{3,n}  \\
         & . & . & . &.&.&.&.\\
         & . & . & . &.&.&.&.\\
         & . & . & . &.&.&.&.\\
         & a_{n,1}+\alpha b_{n,1} & a_{n,2} + \alpha b_{n,2} & a_{n,3}+\alpha b_{n,3} &.&.&.& a_{n,n}+\alpha b_{n,n}  \\
     \end{pmatrix}\\\\$
 
-Let C be a matrix such such that 
+Let C be a matrix such that 
 $C= A+ \alpha B \\$ then we see that 
 $c_{i,j}=a_{i,j}+\alpha b_{i,j} \\$
 ($ c_{i,j},a_{i,j}~ and ~b_{i,j} $ is an entry in row i column j of matrix C, A and B respectively)
@@ -275,7 +308,7 @@ $ a_{i,j}=-a_{j,i} ~ and ~ b_{i,j}=-b_{j,i} ~ (where ~ 1 \leq i \leq n ~and ~1 \
 $a_{ij}$ and $b_{i,j}$~ denote~ entry~ in~ row-i ~column-j ~in ~A~ and ~B~ respectively\\
 
 Just as you have seen the addition of matrix in Question 2\\
-Let C be a matrix such such that 
+Let C be a matrix such that 
 $C= A+ \alpha B $ then we see that \\
 $c_{i,j}=a_{i,j}+\alpha b_{i,j} $
 ($ c_{i,j},a_{i,j}~ and ~b_{i,j} $,is an entry in row i column j of matrix C, A and B respectively)\\
@@ -298,7 +331,7 @@ choose $A, B \in \mathcal{B} $, since A and B are upper triangular matrix then
 
 $ a_{i,j}=0 ~ and ~ b_{i,j}=0~ \forall_{i>j} ~ (where ~ 1 \leq i \leq n ~and ~1 \leq j \leq n )\\$
 $a_{ij} ~ and ~ b_{i,j}$~ denote~ entry~ in~ row-i ~column-j ~in ~A~ and ~B~ respectively\\
-Let C be a matrix such such that \\
+Let C be a matrix  such that \\
 $C= A+ \alpha B $ then we see that \\
 $c_{i,j}=a_{i,j}+\alpha b_{i,j} $\\
 ($ c_{i,j},a_{i,j}~ and ~b_{i,j} $ is an entry in row-i column-j of matrix C, A and B respectively)\\
@@ -322,12 +355,15 @@ Give the geometric interpretation of three linearly dependent vectors.\\
 
 vectors $v_1,v_2$ and $v_3$ are linearly dependent means that one of them is in a plane generated by the other two vectors.
 
-\includegraphics[width=1.0\textwidth]{copaner.png}
-\vspace{4.0cm}
+\includegraphics[width=1.0 \textwidth]{copaner.png}
+\vspace{3.6cm}
 
 \section*{\Huge{Project 3}}
 \Large{Question}\\
 Explore Pascal triangle, Give the meaning/interpretation of the number in the 4th ,5th and 6th diagonal in terms of dimension of vector space.\\
+
+\includegraphics[width=1.0 \textwidth]{pas.png}
+\vspace{4.0cm}
 
 \Large{Solution}\\
 Firstly, Note that the space of all symmetric tensors of order k defined on V which often denoted by $S^k(V)$ or $Sym^k(V)$. It is itself a vector space, and if V has dimension N then the dimension of $Sym^k(V)$ is the binomial coefficient.
@@ -335,24 +371,52 @@ Firstly, Note that the space of all symmetric tensors of order k defined on V wh
 $dim~ {Sym}^{k}(V)={N+k-1 \choose k}.$\\
 
 Now studying the 4th diagonal of a pascal triangle w get tetrahedral numbers. 
-1, 4, 10, 20 3v ,vvi ...\\
+1, 4, 10, 20 35 ,56 ...\\
 the sequence follows the formula \\
 $\frac{(n+2)(n+1)n}{3!} = {n+2 \choose 3} = {n+3-1 \choose 3}$\\
 The formula above look similar to the general formula for dimension of the space of all symmetric tensors of order k defined on N-dimensional vector V.
 so, comparing the formula.
 n is the dimension of V and k=3.\\
 \textbf{Hence, the 4th diagonal of a pascal triangle generate 
-the dimension of the space of all symmetric tensors of order 3 defined on n-dimensional vector V}\\
+the dimension of the space of all symmetric tensors of order 3 defined on n-dimensional vector V} e.g a space of  symmetric tensor of order 3 defined on $\mathbb{R}^n$\\
 
 Studying the 5th diagonal of a pascal triangle we get pentatopes numbers. 
-1, , 10, 20 35 ,5vi ...\\
+1,5, 10, 20 35 ,56 ...\\
 the sequence follows the formula \\
 $\frac{(n+3)(n+2)(n+1)}{4!} = {n+3 \choose 4} = {n+4-1 \choose 4}$\\
 comparing the formula also.
 n is the dimension of v and k=4.\\
-\textbf{Hence, the 5th diagonal of a pascal triangle generate the dimension of the space of symmetric tensors of order 4 defined on n-dimensional vector V}\\
-\vspace{3.0cm}
-   
+\textbf{Hence, the 5th diagonal of a pascal triangle generate the dimension of the space of symmetric tensors of order 4 defined on n-dimensional vector V}  e.g a space of  symmetric tensor of order 4 defined on $\mathbb{R}^n\\
+
+It follows that each diagonal of pascal triangle is is the dimension of dimension of a tensor of certain order. 
+Hence we can generalize that kth diagonal of pascal triangle generate the dimension of tensor of order (k-1) defined on n-dimensional vector.
+\vspace{6.0cm}
+
+\section*{\Huge{Project 4}}
+\Large{Question}\\
+Let $T={O \in M_n(\mathbb{R}) :Tr(O)=0 }$ be a vector space of Trace-less nxn matrices. compute a basis and dimension of T.\\
+    
+\Large{Solutions}\\
+A Basis of Traceless matrices is below\\
+let $A_{i,n}=\{e_{i,1},~ e_{i,2},~e_{i,3}...~e_{i,n}\}$\\
+$$then~ the ~Basis~of ~traceless ~matrix ~ is ~ ( \bigcup_{i=1}^{n} A_i) \setminus \{e_{n,n}\}   $$
+ $e_{i,j}= \begin{bmatrix}
+            0 &  0 &.&.&.& .& .& 0 &0\\
+ 0 &  0 &.&.&.& .& .& 0 &0\\
+ .&.&.&.&.&.&.&.&.\\
+ .&.&.&.&.&1&.&.&.\\
+ .&.&.&.&.&.&.&.&.\\
+ .&.&.&.&.&.&.&.&.\\
+ 0 & 0  &.&.&.& .& .&0& 0\\
+ 0 & 0  &.&.&.& .& .&0& k\\
+            \end{bmatrix}$ \\\\
+where the \pmb{1} is at $i^{th}$ row, $j^{th}$ column \\
+k=-1 whenever $j=i $ and k=0  whenever $i \neq j$\\
+Since $\bigcup_{i=1}^{n} A_i $ has n*n element then 
+the Dimension of the space of  n by n traceless matrix  is 
+\textbf{$n^2-1$}
+\vspace{7cm}
+
 \section*{\Huge{Project 5}}
 \Large{Questions}
 \begin{enumerate}
@@ -497,9 +561,58 @@ But Recall that $\alpha_2=\alpha_1+\alpha3$\\
 so, $\alpha_2= 1+0 = 1,$ \\
 Therefore, $\alpha_1=1, \alpha_2=1, \alpha_3=0~ and ~\alpha_4=-2$\\
 Since We find some real numbers ($\alpha_1, \alpha_2, \alpha_3~and ~\alpha_4$) that not all of them equal to Zero therefore the given set of vectors are \pmb{linearly dependent}.\\
-    
-\item \begin{enumerate}
-    \item If set of vector {$V_1,V_2,V_3,V_4$} are linearly independent then \\
+
+
+\item we need to check if there exist some real numbers $\alpha_1,\alpha_2,\alpha_3$ and $\alpha_4$\\\\
+$\alpha_1 \begin{pmatrix}
+  &1&\\&1&\\ &1&\\&1&\\
+\end{pmatrix} +
+\alpha_2\begin{pmatrix}
+  &1&\\&1&\\ &-1&\\&1&\\
+\end{pmatrix}+
+\alpha_3 \begin{pmatrix}
+  &1&\\&-1&\\ &1&\\&-1&\\
+\end{pmatrix}+
+\alpha_4 \begin{pmatrix}
+  &1&\\&1&\\ &0&\\&1&\\
+\end{pmatrix} = \begin{pmatrix}
+  &1&\\&2&\\ &1&\\&1&\\
+\end{pmatrix}$\\\\
+
+$\begin{pmatrix}
+  &\alpha_1&\\&\alpha_1&\\ &\alpha_1&\\&\alpha_1&\\
+\end{pmatrix} +
+\begin{pmatrix}
+  &\alpha_2&\\&\alpha_2&\\ &-\alpha_2&\\&\alpha_2&
+\end{pmatrix}+
+\begin{pmatrix}
+  &\alpha_3&\\&-\alpha_3\\ &\alpha_3&\\&-\alpha_3&\\
+\end{pmatrix}+
+\begin{pmatrix}
+  &\alpha_4&\\&\alpha_4&\\ &0&\\&\alpha_4&\\
+\end{pmatrix} =\begin{pmatrix}
+  &1&\\&2&\\ &1&\\&1&\\
+\end{pmatrix}$\\\\
+
+
+$ \begin{pmatrix}
+    &\alpha_1+\alpha_2+\alpha_3 +\alpha_4\\
+    &\alpha_1+\alpha_2-\alpha_3 +\alpha_4\\
+    &\alpha_1-\alpha_2+\alpha_3\\
+    &\alpha_1+\alpha_2-\alpha_3 +\alpha_4\\
+  \end{pmatrix} =\begin{pmatrix}
+    &1&\\&2&\\ &1&\\&1&\\
+  \end{pmatrix}$\\\\\\
+      $\alpha_1+\alpha_2+\alpha_3 +\alpha_4 =1$\\
+      $\alpha_1+\alpha_2-\alpha_3 +\alpha_4=2$\\
+      $\alpha_1-\alpha_2+\alpha_3=1$\\
+      $\alpha_1+\alpha_2-\alpha_3 +\alpha_4=1$\\\\
+  \pmb{ Note:} equation(ii) and (iv) have same expression on the left side and different value at the right side. this is a contradiction. therefore  there is no solution\\\\
+Hence, $\begin{pmatrix}
+  &1&\\&2&\\ &1&\\&1&\\
+\end{pmatrix}$ can not be written as linear combination of given set of vectors.
+
+\item If set of vector {$V_1,V_2,V_3,V_4$} are linearly independent then \\
  $\alpha_1 V_1+\alpha_2 V_2+\alpha_3 V_3+ \alpha_4 V_4$ =
 $\begin{pmatrix}
 0\\0\\0\\0
@@ -512,7 +625,8 @@ $\beta_1 (V_1+V_2)+\beta_2 V_2+\beta_3 V_3+ \beta_4 V_4$ =
 $\begin{pmatrix}
 0\\0\\0\\0
 \end{pmatrix}
-$ 
+$ \\
+ 
  only if $\beta_1 = \beta_2 =\beta_3= \beta_4=0$\\\\
  
 \pmb{Proof:}\\
@@ -533,14 +647,14 @@ $\begin{pmatrix}
 0\\0\\0\\0\\
 \end{pmatrix}$
 
-let $\beta_v=\beta_1+\beta_2$ then,\\
+let $\beta_5=\beta_1+\beta_2$ then,\\
 
-$\beta_1 V_1+ \beta_v  V_2+\beta_3 V_3+ \beta_4 V_4$ =
+$\beta_1 V_1+ \beta_5  V_2+\beta_3 V_3+ \beta_4 V_4$ =
 $\begin{pmatrix}
 0\\0\\0\\0\\
 \end{pmatrix}$\\
-Since we know that $V_1,V_2,V_3,V_4$ are linearly independent then \\ $\beta_1=\beta_v=\beta_3=\beta_4=0$\\
-Recall that $\beta_3=\beta_1+\beta_2$\\
+Since we know that $V_1,V_2,V_3,V_4$ are linearly independent then \\ $\beta_1=\beta_5=\beta_3=\beta_4=0$\\
+Recall that $\beta_5=\beta_1+\beta_2$\\
 so, $\beta_1+\beta_2=0$\\ 
 since $\beta_1=0$ then, $0+\beta_2$=0\\  
 therefore, $\beta_2=0$\\
@@ -584,7 +698,7 @@ $\begin{pmatrix}
 \end{pmatrix}$\\
 Since we know that $V_1,V_2,V_3,V_4$ are linearly independent then \\ $\beta_5=\beta_6=\beta_7=\beta_8=0$\\
 Recall that,
-$\beta_v=\beta_1+\beta_2,~ \beta_5=\beta_1+\beta_4,~\beta_{vi}=\beta_1+\beta_2\\
+$ \beta_5=\beta_1+\beta_4,~\beta_{6}=\beta_1+\beta_2\\
 \beta_7=\beta_2+\beta_3~ and ~\beta_8=\beta_3+\beta_4$\\\\
 so, 
 $\beta_1+\beta_4=0 ~ ~ ~ ~ ~eq(i) \\
@@ -593,19 +707,232 @@ $\beta_1+\beta_4=0 ~ ~ ~ ~ ~eq(i) \\
 \beta_3+\beta_4=0  ~ ~ ~ ~ ~ ~ ~eq(iv)$
 
 Subtract eq(ii) from eq(i) and eq(iii) from eq(iv)\\
-then the set of vector  {$V_1+V_2,V_2,V_3,V_4$} are linearly independent then 
-$\beta_4 - \beta_2=0\\
+then $\beta_4 - \beta_2=0\\
 \beta_4-\beta_2=0$\\
-Both equation gotten is the same. So, choose $\beta_2 = 1$\\
+Both equation gotten is the same. So, choose 
+$\beta_2 = 1$\\
 then, $\beta_4-1=0 \implies \beta_4=1$\\
  From eq(iii)$\beta_2+\beta_3=0 \implies \beta_1=-1$
- Therefore, $\beta_1=-1, \beta_2=1, \beta_3=-1 ~and ~beta_4=1$\\
+ Therefore, $\beta_1=-1, \beta_2=1, \beta_3=-1 ~and ~\beta_4=1$\\ 
+ 
  Hence, the vector $(V_1+V_2),(V_2+V_3),(V_3+V_4)$ and $(V_4+V_1)$ are \pmb{linearly dependent}.
+
+ \item $f(x) = e^x, g(x)=e^{2x}$ and $h(x)=e^{3x}$ \\\\
+we need to show that $\alpha_1=\alpha_2=\alpha_3=0$ is the only solution to \\equation:
+$\alpha_1e^x+\alpha_2e^{2x}+\alpha_3e^{3x}=0$\\
+
+\vspace{2cm}
+
+\textbf{Proof:}\\
+Take the derivative twice to get new two more equations\\
+$\alpha_1e^x+\alpha_2e^{2x}+\alpha_3e^{3x}=0$\\
+$\alpha_1e^x+2\alpha_2e^{2x}+3\alpha_3e^{3x}=0$\\
+$\alpha_1e^x+4\alpha_2e^{2x}+9\alpha_3e^{3x}=0$\\
+let A=$\alpha_1e^x,B=\alpha_1e^{2x}$ and $C=\alpha_1e^{3x}+$\\
+then,
+$A+B+C=0$\\
+$A+2B+3C=0$\\
+$A+4B+9C=0$\\\\
+$A+B+C=0$\\
+$A+2B+3C=0$\\
+$A+4B+9C=0$\\\\
+Solving for A,B,C using reduced echelon\\
+$\begin{pmatrix}
+1& 1 & 1\\
+1& 2 & 3\\
+1& 4 & 9\\
+\end{pmatrix}
+\begin{pmatrix}
+A\\B\\C
+\end{pmatrix} =
+\begin{pmatrix}
+0\\0\\0
+\end{pmatrix}$
+\implies 
+$\begin{pmatrix}
+1& 1 & 1|0\\
+1& 2 & 3|0\\
+1& 4 & 9|0\\
+\end{pmatrix}$\\\\
+\begin{matrix}
+$R_2-R_1$ and $R_3-R_1$ & $R_3-3R_2$\\
+\begin{pmatrix}
+1& 1 & 1|0\\
+0& 1 & 2|0\\
+0& 3 & 8|0\\
+\end{pmatrix} &
+
+$\begin{pmatrix}
+1& 1 & 1 &|0 \\
+0& 1 & 2 &|0\\
+0& 0 & 2 &|0\\
+\end{pmatrix}$
+\end{matrix}  \\
+2C=0 $\implies c=0$\\
+b+2c=0 $B+2C=0 \implies B=0$\\
+A+B+C=0 $\implies A=0$\\\\
+Recall that, $A=\alpha_1e^x, B=\alpha_2e^{2x}$ and $C=\alpha_3e^{3x}$\\
+$\alpha_1e^x=0 \implies \alpha_1=0 ~or ~e^{x}=0\\
+ \alpha_1e^2x=0 \implies \alpha_2=0~ or ~e^{2x}=0$\\
+$\alpha_1e^3x=0 \implies \alpha_3=0~ or ~e^{3x}=0$\\
+Since we know that exponential function is always greater than 0. Therefore, $\alpha_1=0, ~\alpha_2=0 ~and~ \alpha_3=0 $
+Hence, f,g and h are linearly independent.
 \end{enumerate}
-\end{enumerate}
-\end{enumerate}
+
+\vspace{3.0cm}
+
+
+\section*{\Huge{Project 6}}
+\Large{Question}\\
+Let $S=\{v_1,v_2,v_3,v_4,v_5\}$ be a set of vectors in a vector space $\mathbb(R)$. Find a basis for L(S)\\
+$v_1=\begin{pmatrix}
+    1\\0\\1
+\end{pmatrix},
+v_2=\begin{pmatrix}
+    0\\1\\1
+\end{pmatrix},
+v_3=\begin{pmatrix}
+    1\\1\\2
+\end{pmatrix},
+v_4=\begin{pmatrix}
+    1\\2\\1
+\end{pmatrix}$ and 
+$v_5=\begin{pmatrix}
+    -1\\1\\-2
+\end{pmatrix}$
+
+\vspace{0.4cm}
+
+\Large{Solution}\\
+
+\vspace{0.3cm}
+
+$v_1=\begin{pmatrix}
+    1\\0\\1
+\end{pmatrix},
+v_2=\begin{pmatrix}
+    0\\1\\1
+\end{pmatrix},
+v_3=\begin{pmatrix}
+    1\\1\\2
+\end{pmatrix},
+v_4=\begin{pmatrix}
+    1\\2\\1
+\end{pmatrix}$ and 
+$v_5=\begin{pmatrix}
+    -1\\1\\-2
+\end{pmatrix}
+$ \\
+
+$v_1,v_2,v_3,v_4$ and $v_5$ are linearly dependent. \\
+
+Proof: \\
+ we need to show that there exist some real numbers $\alpha_1,\alpha_2,\alpha_3,\alpha_4$ and $\alpha_5$ not all are zero such that, 
+ $\alpha_1 V_1+\alpha_2 V_2+\alpha_3 V_3+ \alpha_4 V_4+\alpha_5 V_5=0$ i.e, \\
+ $\alpha_1 \begin{pmatrix}
+    1\\0\\1
+\end{pmatrix}
++\alpha_2 \begin{pmatrix}
+    0\\1\\1
+\end{pmatrix}
++\alpha_3 \begin{pmatrix}
+    1\\1\\2
+\end{pmatrix}
++ \alpha_4 \begin{pmatrix}
+    1\\2\\1
+\end{pmatrix}
++\alpha_5 \begin{pmatrix}
+    -1\\1\\-2
+\end{pmatrix}=\begin{pmatrix}
+0\\0\\0
+\end{pmatrix}$ 
+ 
+ choose, $\alpha_1=-2,\alpha_2=-1,\alpha_3=0,\alpha_4=1$ and $\alpha_5=-1$\\
+ 
+-2\begin{pmatrix}
+    1\\0\\1
+\end{pmatrix} -1\begin{pmatrix}
+    0\\1\\1
+\end{pmatrix}
++ 0\begin{pmatrix}
+    1\\1\\2
+\end{pmatrix}
+1 \begin{pmatrix}
+    1\\2\\1
+\end{pmatrix}
+-1\begin{pmatrix}
+    -1\\1\\-2
+\end{pmatrix}=\begin{pmatrix}
+0\\0\\0
+\end{pmatrix}
+$\\\\
+
+Make $v_5$ the subject of the formula\\
+
+$\begin{pmatrix}
+    -1\\1\\-2
+\end{pmatrix}=
+\begin{equation}
+    -2\begin{pmatrix}
+    1\\0\\1
+\end{pmatrix} -\begin{pmatrix}
+    0\\1\\1
+\end{pmatrix}
++ \begin{pmatrix}
+    1\\2\\1
+\end{pmatrix}\\\\
+
+this shows that $v_5$ can be expressed as linear combination of $v_1,v_2,$ and $v_4$
+
+\textbf{Hence delete $v_5$.}\\
+
+we have $v_1,v_2,v_3$ and $v_4$ which  are still linearly dependent
+
+\vspace{2.7cm}
+
+\textbf{Proof}:\\
+we need to show that there exist some real number $\alpha_1,\alpha_2,\alpha_3,$ and $\alpha_4$ not all are zero such that, 
+$\alpha_1 v_1+\alpha_2 v_2+\alpha_3 v_3+ \alpha_4 v_4=0$ 
+that is, \\
+
+$\alpha_1 \begin{pmatrix}
+   1\\0\\1
+\end{pmatrix}
++\alpha_2 \begin{pmatrix}
+   0\\1\\1
+\end{pmatrix}
++\alpha_3 \begin{pmatrix}
+   1\\1\\2
+\end{pmatrix}
++ \alpha_4 \begin{pmatrix}
+   1\\2\\1
+\end{pmatrix}
+=\begin{pmatrix}
+0\\0\\0
+\end{pmatrix}$\\\\
+choose, $\alpha_1=1,\alpha_2=1,\alpha_3=-1$ and $\alpha_4=0$\\
+\begin{pmatrix}
+   1\\0\\1
+\end{pmatrix} + \begin{pmatrix}
+   0\\1\\1
+\end{pmatrix}
+- \begin{pmatrix}
+   1\\1\\2
+\end{pmatrix}
++0 \begin{pmatrix}
+   1\\2\\1
+\end{pmatrix}=\begin{pmatrix}
+0\\0\\0
+\end{pmatrix}$\\\\
+
+since $v_1+v_2-v_3=\begin{pmatrix}
+0\\0\\0
+\end{pmatrix}$ then $v_3=v_1+v_2$
+Since $v_3$ can be written as linear combination of $v_1$ and $v_2$ therefore, \textbf{delete $v_3$.}
+
+Now we are left with three vectors. $v_1,v_2$ and $v_4$\\
+which are linearly independent. \textbf{set of vectors
+$v_1,v_2$ and $v_4$ is a basis.for L(S)}
+
+
 \end{document}
-
-
-
-
