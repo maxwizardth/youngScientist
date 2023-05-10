@@ -1,0 +1,296 @@
+  \documentclass[45pt]{article}
+\usepackage{blindtext}
+\usepackage[english]{babel}
+\usepackage[letterpaper,total={6in,8in},top=2cm, bottom=2cm, left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+\usepackage{mathptmx}
+\usepackage[10pt]{moresize}
+% Useful packages
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{amsfonts}
+\usepackage{mathptmx}
+\usepackage{anyfontsize}
+\usepackage{t1enc}
+\usepackage[utf8]{inputenc}
+
+\title{GROUP 1}
+\author{Project 1}
+
+\begin{document}
+\begin{titlepage}
+    \begin{center}
+        {\fontsize{70}{70}\selectfont MAT 212}
+        
+        \vspace{1cm}
+        \Huge
+        \textbf{Linear Algebra}
+        
+        \vspace{0.5cm}
+        \LARGE
+        Vector Space
+        
+        \vspace{0.5cm}
+        {\fontsize{50}{50}\selectfont Group 1}
+        \vspace{0.6cm}        
+            
+        A project providing solution to  different problems on \\vector Space.
+        \vspace{0.8cm}
+            
+        \includegraphics[width=0.4\textwidth]{UI logo.png}
+
+        \vspace{1.0cm}
+        
+        \Large{
+         Mathematics (BSc. and B.Ed)\\
+        University of Ibadan\\
+        Nigeria.\\
+        21/04/2023}
+            
+    \end{center}
+\end{titlepage}
+\begin{center}
+\LARGE
+\begin{tabular} { |p {1 cm}| p {5 cm} | p {2 cm} | p {5 cm} | p{2.2cm}|}
+
+    \hline
+    \multicolumn{5} { | c | }{\LARGE{Contributors}}\\
+    \hline
+    Sn & Names & Matric & Skill &Signature\\
+    \hline
+1& Oladejo abdullahi Titlayo & 221382 & maths and webdev Tutor&\\
+\hline
+ 2& Ladoja Abimifoluwa Jemimah & 222667 & copy writing&\\
+ \hline
+3 & Oladapo Testimony Emmanuel & 222678& NFA&\\
+  \hline
+ 4 & Akinsola, Qudus Oladimeji & 221375 & Graphics Design&\\
+\hline
+ 5&OLUWADARA ADEOLUWA & 222691 & Product Management&\\
+  \hline
+  4&BLESSING ADEBAYO & 222634& GRAPHIC DESIGN&\\
+  \hline
+  7&Joshua Ebenezer Dayo & 222665& NFA&\\
+  \hline
+  8&Olanrewaju Bunmi Emmanuel &222681& Laptop Repair Specialist / content Creator&\\
+  \hline
+  9 & Falola Micheal Oluwatobi & 223769 &  web Design&\\
+ \hline
+ 10&Oladipupo Joy Oluwatomisin & 230179 & entrepreneur&\\
+  \hline
+11& Olatunde Victor Olubiyi & 222686 &  NFA&\\
+   
+    \hline
+ \end{tabular}
+ \end{center}
+ \vspace{2.0cmq}
+
+
+\section{\Huge{Project 5}}\
+\paragraph{\Huge{Exampe of Symmetric Tensor are :}}
+\begin{enumerate}
+    \item \Large{Symmetric Tensor of order 3 defined on $\mathbb{R}^2$ written as $ S^3(\mathbb{R}^2)$}\\
+     $ S^3(\mathbb{R}^2)$=
+$\begin{Bmatrix}
+  A: A=
+   \begin{bmatrix}
+     \begin{pmatrix}
+     a & b & \\
+     b & d
+     \end{pmatrix}
+     &
+      \begin{pmatrix}
+     b & d & \\
+     d & c
+     \end{pmatrix}
+   \end{bmatrix}$,
+a,b,c,d $\in \mathbb{R}
+     \end{Bmatrix}$
+
+\item  \Large{Symmetric Tensor of order 3 defined on $\mathbb{R}^3$ written as $ S^3(\mathbb{R}^3)$}\\
+
+$ S^3(\mathbb{R}^3)$=$\begin{Bmatrix}
+  A: A=
+   \begin{bmatrix}
+     \begin{pmatrix}
+     a & d & e\\
+     d & h & f\\
+     e & f & g\\
+     \end{pmatrix}
+     &
+       \begin{pmatrix}
+     d & h & f\\
+     h & b & i\\
+     f & i & j\\
+     \end{pmatrix}
+     &
+      \begin{pmatrix}
+     e & f & g\\
+     f & i & j\\
+     g & j & c\\
+     \end{pmatrix}
+   \end{bmatrix}
+     \end{Bmatrix}$\\
+     a,b,c,...j $\in \mathbb{R}$ 
+\end{enumerate}
+
+
+\section{Project Tensor}
+\Large{Symmetric Tensor of order 3 defined on $\mathbb{R}^2$ written as $ S^3(\mathbb{R}^2)$}\\
+
+$V=\begin{Bmatrix}  
+  A: A=
+ \begin{bmatrix}
+  \begin{pmatrix} a_0&a_1\\ a_1&a_2\\
+  \end{pmatrix}
+  \begin{pmatrix}
+  a_1&a_2\\
+  a_2& a_3 \\
+\end{pmatrix}
+  \end{bmatrix}
+  a_i \in \mathbb{R}
+\end{Bmatrix}\\
+$
+\newcommand\fontsizeXii{\fontsize{12pt}{12pt}\selectfont}
+
+
+\pmb{Basis is} $\begin{Bmatrix}
+{\fontsizeXii
+    \begin{bmatrix}
+    \begin{pmatrix}
+    1&0\\
+    0&0\\
+  \end{pmatrix}
+    \begin{pmatrix}
+    0&0\\
+    0&0 \\
+  \end{pmatrix}
+\end{bmatrix},
+
+\begin{bmatrix}
+  \begin{pmatrix}
+  0&1\\
+  1&0\\
+\end{pmatrix}
+  \begin{pmatrix}
+  1&0\\
+  0&0 \\
+\end{pmatrix}
+\end{bmatrix},
+
+\begin{bmatrix}
+  \begin{pmatrix}
+  0&0\\
+  0&1\\
+\end{pmatrix}
+  \begin{pmatrix}
+  0&1\\
+  1&0 \\
+\end{pmatrix}
+\end{bmatrix},
+
+\begin{bmatrix}
+  \begin{pmatrix}
+  0&0\\
+  0&0\\
+\end{pmatrix}
+  \begin{pmatrix}
+  0&0\\
+  0&1 \\
+\end{pmatrix}
+\end{bmatrix}}
+\end{Bmatrix}$
+
+
+\section{Project 2}
+\Large{Consider two bases of $\mathbb{R}^3$}
+$\mathcal{B}_1$=
+$\begin{Bmatrix}
+    \begin{pmatrix}
+        1\\1\\1
+    \end{pmatrix}&
+    
+\begin{pmatrix}
+        1\\1\\0
+\end{pmatrix}&
+\begin{pmatrix}
+        1\\0\\0
+\end{pmatrix}
+\end{Bmatrix}$ and 
+
+$\mathcal{B}_2=
+\begin{Bmatrix}
+    \begin{pmatrix}
+        1\\1\\-1
+    \end{pmatrix}&
+    
+\begin{pmatrix}
+        1\\-1\\0
+\end{pmatrix}&
+\begin{pmatrix}
+        2\\0\\0
+\end{pmatrix}
+\end{Bmatrix}$
+
+
+Observe that 
+$\begin{pmatrix} 1\\1 \end{pmatrix} and 
+\begin{pmatrix} 1\\-1 \end{pmatrix}$ are linearly independent, since the vectors are in $\mathbb{R}2$ 
+then $\begin{pmatrix} 1\\1 \end{pmatrix}$ and 
+$\begin{pmatrix} 1\\-1 \end{pmatrix}$ spanned  $\mathbb{R}^2$ \\
+
+\pmb{Hence they form a basis for the vector space defined above.}\\\\
+
+For us to define the mapping we need to find the transformation of $\begin{pmatrix} a\\b \end{pmatrix} \forall_{a,b} \in \mathbb{R}$\\
+
+Firstly, Let us find the coordinate of $\begin{pmatrix} a\\b \end{pmatrix}$ with respect to
+$\begin{Bmatrix}
+  \begin{pmatrix} 1\\1 \end{pmatrix} &
+\begin{pmatrix} 1\\-1 \end{pmatrix} 
+\end{Bmatrix}$
+
+Let $\alpha ~~ and ~\beta$ be the coordinate then,\\
+$\alpha \begin{pmatrix} 1\\1 \end{pmatrix}$ +
+$\beta \begin{pmatrix} 1\\-1 \end{pmatrix} =\begin{pmatrix} a\\b \end{pmatrix}$
+$\begin{pmatrix} \alpha+\beta\\ \alpha - \beta \end{pmatrix}=\begin{pmatrix} a\\b \end{pmatrix}$\\
+$ \alpha+\beta =a~...eqI$\\
+$ \alpha - \beta =b...eqII$\\
+add eqI and eqII then we will have \\
+$2 \alpha =a+b \implies \alpha =\frac{a+b}{2}$\\\\
+From eqI, $ \alpha+\beta =a~...eqI$\\
+so, $\frac{a+b}{2} +\beta =a$\\
+$\beta =a-\frac{a+b}{2} \implies \beta = \frac{2a-a-b}{2}$
+$\beta =\frac{a-b}{2}$\\
+So, 
+
+$\begin{pmatrix} a\\b \end{pmatrix} =\frac{a+b}{2} \begin{pmatrix} 1\\1 \end{pmatrix} + $
+$\frac{a-b}{2} \begin{pmatrix} 1\\-1 \end{pmatrix}$\\\\
+Since L is a mapping then,\\
+$L\begin{pmatrix} \begin{pmatrix} a\\b \end{pmatrix} \end{pmatrix} =$
+$L\begin{pmatrix} \frac{a+b}{2} \begin{pmatrix} 1\\1 \end{pmatrix} \end{pmatrix}$
++ 
+$L\begin{pmatrix} \frac{a-b}{2} \begin{pmatrix} 1\\-1 \end{pmatrix} \end{pmatrix}$\\\\
+$\implies \frac{a+b}{2} L\begin{pmatrix} \begin{pmatrix} 1\\1 \end{pmatrix} \end{pmatrix}$
++ 
+$\frac{a-b}{2}L\begin{pmatrix}  \begin{pmatrix} 1\\-1 \end{pmatrix} \end{pmatrix}$ \\\\
+But the transformation of $\begin{pmatrix} 1\\1 \end{pmatrix} ~and ~ \begin{pmatrix} 1\\-1 \end{pmatrix}$ are given\\
+Therefore,\\
+$L\begin{pmatrix} \begin{pmatrix} a\\b \end{pmatrix} \end{pmatrix} =$
+$ \frac{a+b}{2} \begin{pmatrix} -1\\ 1\\2\\3 \end{pmatrix}$
++ 
+$\frac{a-b}{2} \begin{pmatrix} 2\\0\\2\\3 \end{pmatrix}$
+$\implies L\begin{pmatrix} \begin{pmatrix} a\\b \end{pmatrix} \end{pmatrix} =$
+$ \begin{pmatrix} \frac{-a-b}{2} \\ \frac{a+b}{2} \\a+b\\ \frac{3a+3b}{2}  \end{pmatrix}$
++ 
+$ \begin{pmatrix} \frac{2a-2b}{2}\\0\\a-b\\\frac{3a-3b}{2} \end{pmatrix}$\\\\\\
+$\implies L\begin{pmatrix} \begin{pmatrix} a\\b \end{pmatrix} \end{pmatrix} =$
+$ \begin{pmatrix} \frac{-a-b+2a-2b}{2} \\ \frac{a+b}{2} \\a+b+a-b\\ \frac{3a+3b+3a-3b}{2}  \end{pmatrix}$
+= 
+$ \begin{pmatrix} \frac{a-3b}{2}\\\frac{a+b}{2}\\2a\\\frac{a}{2} \end{pmatrix}$\\\\
+$\implies L\begin{pmatrix} \begin{pmatrix} a\\b \end{pmatrix} \end{pmatrix} = \begin{pmatrix} \frac{a-3b}{2}\\\frac{a+b}{2}\\2a\\3a \end{pmatrix}$
+\\\\\\\\
+Hence the linear transformation can be defined as follow\\\\
+$ L\begin{pmatrix} \begin{pmatrix} a\\b \end{pmatrix} \end{pmatrix} = \begin{pmatrix} \frac{a-3b}{2}\\\frac{a+b}{2}\\2a\\3a \end{pmatrix}$
+
+
+\end{document}
