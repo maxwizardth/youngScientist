@@ -196,6 +196,22 @@ var dimension=()=>{var degree= document.getElementById('degree').value
 var basis=Basis(degree,variables).length
   document.getElementById('Dimension').innerHTML=`The Dimension is ${basis}`}
   
+
+
+function multinomial2(){
+  var degree= document.getElementById('degree').value
+  var variables=  document.getElementById('variable').value
+var basis=Basis2(degree,variables).map((el,i)=>`a<sub>${i}</sub>${el}`)
+basis=basis.join('&nbsp;+ ')
+  document.getElementById('Dimension').innerHTML=`The Polynomial function is defined like below<br>${basis}<br>
+  Where a<sub>i</sub> are real coefficient`
+}
+
+var dimension2=()=>{var degree= document.getElementById('degree').value
+  var variables=  document.getElementById('variable').value
+var basis2=Basis(degree,variables).length
+  document.getElementById('Dimension').innerHTML=`The Dimension is ${basis}`}
+  
 </script>
 
  <div></div>
