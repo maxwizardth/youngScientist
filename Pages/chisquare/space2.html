@@ -1,39 +1,101 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="anovaCal.css">
-    
-    <title>Multinomial Calculator</title>
-  <style type="text/css">
-  *{text-align: center;}
-  input{margin: 14px;
-        border: solid 4px black;
-        height: 30px;}
-    p{word-break: break-word;
-     line-height: 20px;
-     }
-    button{padding: 9px;
-           outline: none;}
-  
-  </style>
+    <link rel="stylesheet" href="anovaCal.css"> 
+    <title>Vector Space Calculator</title>
+    <style type="text/css">
+        input{height: 22px;}
+    </style>
 </head>
+
 <body>
+<div class="frame">
+        <h1 class="anova">Vector Space Calculator</h1>
+   <div class="container">
+    <div class="Nav">
 
-  <p><label>Variable</label><input type="number" min=1 id="variable"></p>
-  <p><label>Degree</label><input type="number" min=1 id="degree"></p>
-  <p>
-  <button onclick="ShowBasis2()">Get Basis</button>
-  <button onclick="multinomial2()">Get Equations</button>
-  <button onclick="dimension2()">Dimension</button>
-  </p>
+        <div class="dropdown">
+            <button class="dropbtn">Switch way  </button>
+            <div class="dropdown-content">
+                <span class="OneWay">Homogeneous</span>
+                <span class="TwoWay">Non Homogeneous</span>
+            </div>
+          </div> 
 
-  <p id="basis"></p>
-  <p id="Equation"></p>
-  <p id="Dimension"></p>
-<script type="text/javascript">
+
+        <div class="dropdown">
+            <button class="dropbtn">Adjust deg/var</button>
+            <div class="dropdown-content">
+
+                <div class="adjust-content">
+                    <button class="inner" onclick="addColumn1('dataRows1')">+</button>
+                    Variable
+                    <button class="inner" onclick="addColumn1('dataRows1')">-</button>
+                </div>
+
+                <div class="adjust-content">
+                    <button class="inner" onclick="addRow1('dataRows1')">+</button>
+                   Degree
+                    <button class="inner" onclick="addRow1('dataRows1')">-</button>
+                </div>
+
+                
+            </div>
+        </div>
+
+          
+    </div>
+        <div class="form">
+          <form action="">
+            <table id="oneWay">
+             <tr class="dataRows1">
+                <th class="head">
+                <p class="heading"><i>Variable</i></p>
+                  <input type="number" class="input input1" autofocus id="variable">
+                    </th>
+                        <th class="head">
+                            <p class="heading"><i>Degree</i></p>
+                            <input type="number" class="input input1" autofocus id="degree">
+                        </th>
+                           
+                    </tr>
+                  
+                 </table>
+                
+                </form>
+
+                 <div class="btm-nav">              
+                            
+                             <button onclick="dimension2()">Compute Dimension</button>&nbsp;
+                              <button onclick="ShowBasis2()">Compute Basis</button>&nbsp;
+
+                        <button id="compute" onclick="multinomial2()" >Compute Result</button>
+                      </div>
+
+                 </div>
+              
+              
+            </form>
+               </div>
+   </div>
+</div>
+
+ <div class="solution">
+  <h3 class="SSWHeading"></h3>
+
+    <div id="Dimension" class="animate-bottom"></div>
+
+<div id="loader"></div>
+<div style="display:none;" id="myDiv" class="animate-bottom">
+    <div id="summary" class="animate-bottom" > </div>
+         
+    </div>
+    
+ </div>
+
+ <script type="text/javascript">
   function combinationsWithReplacement(arr, k) {
   const result = [];
   const current = [];
@@ -122,7 +184,10 @@ function Basis2(degree,variables){
 function ShowBasis2(){
   var degree= document.getElementById('degree').value
   var variables=  document.getElementById('variable').value
-  basis=Basis2(degree,variables).join(', &nbsp;')
+
+  basis=Basis2(degree,variables)
+  basis[0]=1
+  basis=basis.join(', &nbsp;')
   document.getElementById('Dimension').innerHTML=`A Basis is<br> {${basis}}`
 }
 
@@ -137,8 +202,8 @@ basis=basis.join('&nbsp;+ ')
 
 var dimension2=()=>{var degree= document.getElementById('degree').value
   var variables=  document.getElementById('variable').value
-var basis2=Basis(degree,variables).length
-  document.getElementById('Dimension').innerHTML=`The Dimension is ${basis}`}
+var basis2=Basis2(degree,variables).length
+  document.getElementById('Dimension').innerHTML=`The Dimension is ${basis2}`}
 </script>
 </body>
 </html>
